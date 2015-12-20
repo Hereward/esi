@@ -52,9 +52,16 @@ footer {
     min-height:359px;
 }
 
-.callout_2 {
+
+
+div.callout_2 {
     background-color:#ededed;
+    font-family: helvetica, arial, sans-serif;
+    padding-top:30px;
+    color: #a71680;
 }
+
+
 
 .contact_info {
     background-color:#4c1156;
@@ -72,7 +79,7 @@ footer {
 }
 
 .callout_2 .row {
-    margin:50px 0px 50px 0px;
+    margin:50px 0px 0px 0px;
 }
 
 .contact_info .row {
@@ -85,12 +92,12 @@ footer {
     height:40px;
     background-color:#4c1156;
     color:#ea5153;
-    font-size:14px;
+    font-size:13px;
     font-family:helvetica, arial, sans-serif;
 }
 
 .taskbar p {
-    margin:10px 30px 5px 30px;
+    margin:12px 30px 5px 30px;
 }
 
 
@@ -166,6 +173,23 @@ footer {
 }
 
 
+div.carousel_static_caption {
+    position: absolute;
+    top: 300px;
+    z-index: 100;
+    left: 25px;
+    width:350px;
+    font-family: helvetica, arial, sans-serif;
+    font-size: 34px;
+    font-weight:normal;
+    color:#a71680;
+    line-height:40px;
+
+
+
+}
+
+
 /* MARKETING CONTENT
 -------------------------------------------------- */
 
@@ -200,6 +224,18 @@ footer {
 .featurette .col-md-5 {
     padding-right:0px;
 }
+
+.featurette p {
+    font-family: helvetica, arial, sans-serif;
+    font-size: 17px;
+    font-weight:normal;
+}
+
+h2.featurette-heading {
+    font-size:36px;
+    color:#a71680;
+}
+
 
 
 /* RESPONSIVE CSS
