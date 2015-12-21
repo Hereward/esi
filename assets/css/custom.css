@@ -15,6 +15,11 @@ body {
 
 }
 
+.row {
+    margin-right: -20px;
+    margin-left: -20px;
+}
+
 p {
 
 }
@@ -255,9 +260,6 @@ div.carousel_static_caption {
     letter-spacing: -1px;
 }
 
-.featurette .col-md-5 {
-    padding-right:0px;
-}
 
 .featurette p {
     /* font-family: helvetica, arial, sans-serif; */
@@ -269,12 +271,21 @@ div.carousel_static_caption {
 h2.featurette-heading {
     font-size:36px;
     color:#a71680;
+    max-width:500px;
 }
 
 
 
 /* RESPONSIVE CSS
 -------------------------------------------------- */
+
+@media (max-width: 1199px) {
+
+    .featurette img {
+        width:400px;
+    }
+
+}
 
 @media (max-width: 767px) {
     div.carousel_static_caption {
@@ -289,6 +300,10 @@ h2.featurette-heading {
 
         line-height:25px;
 
+    }
+
+    .featurette img {
+        width:300px;
     }
 
 }
@@ -308,6 +323,10 @@ h2.featurette-heading {
 
         line-height:25px;
 
+    }
+
+    .featurette img {
+        width:200px;
     }
 
 }
@@ -394,7 +413,25 @@ ul.nav {
         margin:12px 30px 5px 60px;
     }
 
+    .featurette img {
+        width:450px;
+    }
+
+
+
 }
+
+@media (min-width: 1500px) {
+
+
+    .featurette img {
+        min-width:540px;
+    }
+
+
+
+}
+
 
 
 

@@ -205,7 +205,7 @@
 
 
     <div class="row featurette">
-        <div class="col-md-7 col-lg-4 col-lg-offset-2">
+        <div  class="col-md-7 col-lg-4 col-lg-offset-2">
             <h2 class="featurette-heading">Working with the strata experts.</h2>
             <p>
                 Expert understands how important it is for you as a strata manager and your clients to be provided with leading advice and support to get the cover that is right for them. With a commitment to building long-term relationships with our strata managers, our goal is to work with our clients to provide the support and expertise needed to make things easy.
@@ -227,9 +227,9 @@
         </div>
 
         <div class="col-md-7 col-lg-6">
-            <h2 class="featurette-heading">Everything you need and nothing you don’t.</h2>
-            <p>We understand your responsibilities can be very complex and demanding. We at Expert will make your strata insurance requirements something simple.</p>
-            <p>Whether the strata plans you manage are residential, commercial or mixed strata, Expert can provide you with a quote, Australia-wide. We offer a top class, comprehensive package of covers that include many additional and optional benefits to meet your client’s needs.</p>
+            <h2 style="margin-left: 30px;" class="featurette-heading">Everything you need and nothing you don’t.</h2>
+            <p style="margin-left: 30px;">We understand your responsibilities can be very complex and demanding. We at Expert will make your strata insurance requirements something simple.</p>
+            <p style="margin-left: 30px;">Whether the strata plans you manage are residential, commercial or mixed strata, Expert can provide you with a quote, Australia-wide. We offer a top class, comprehensive package of covers that include many additional and optional benefits to meet your client’s needs.</p>
 
         </div>
 
