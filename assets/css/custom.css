@@ -178,6 +178,7 @@ div.callout_2 {
     /* max-width:1200px; */
     margin-left:auto;
     margin-right:auto;
+
 }
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
@@ -190,7 +191,7 @@ div.callout_2 {
     background-color: #777;
     margin-left:auto;
     margin-right:auto;
-    /* min-height:500px; */
+    min-height:250px;
 }
 .carousel-inner > .item > img {
 /*
@@ -204,6 +205,7 @@ div.callout_2 {
     /* text-align:center; */
     /* max-width:960px; */
     /* height: 649px; */
+    min-height:200px;
 }
 
 
