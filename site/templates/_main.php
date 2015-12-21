@@ -12,7 +12,7 @@
     <link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 
-    <title>Carousel Template for Bootstrap</title>
+    <title>Expert Strata Insurance Pty Ltd</title>
 
     <!-- Bootstrap core CSS -->
     <link href="<?=$bs?>/css/bootstrap.min.css" rel="stylesheet">
