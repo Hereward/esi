@@ -40,7 +40,7 @@
 
 <div class="container-fluid taskbar">
     <div class="row">
-        <div class=".col-lg-12">
+        <div class="col-lg-12">
             <p class="pull-left"><img style="vertical-align:top;" src="<?=$my_assets?>/images/icons/member.png" alt="member"> Hi, Zoe Smith</p>
             <p class="pull-right">1300 442 676 &nbsp; Make a claim &nbsp; Request a quote &nbsp; Log out</p>
 
@@ -124,52 +124,12 @@
         </div><!-- /.container-fluid -->
     </nav>
 
-
-    <!--
-    <div class="container-fluid">
-
-        <nav class="navbar navbar-default navbar-static-top">
-            <div class="container">
-                <div class="navbar-header navbar-left">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#"><img src="<?=$my_assets?>/images/general/logo.png"></a>
-                </div>
-                <div id="navbar" class="navbar-collapse collapse navbar-right">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li class="dropdown-header">Nav header</li>
-                                <li><a href="#">Separated link</a></li>
-                                <li><a href="#">One more separated link</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-    </div>
-    -->
 </div>
 
 
 <!-- Carousel
 ================================================== -->
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
-
     <!-- Indicators -->
     <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -185,10 +145,12 @@
 
 
         <div class="item active">
-            <img class="first-slide" src="<?=$my_assets?>/images/slides/slide_1.jpg" alt="First slide">
+            <img class="first-slide" src="https://placehold.it/3000X1000" alt="First slide">
             <div class="container">
                 <!---
+                src="$my_assets/images/slides/slide_1.jpg"
                 <div class="carousel-caption">
+
                     <h1>Example headline.</h1>
                     <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
                     <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
@@ -197,41 +159,27 @@
             </div>
         </div>
         <div class="item">
-            <img class="second-slide" src="<?=$my_assets?>/images/slides/slide_2.jpg" alt="Second slide">
+            <img class="second-slide" src="https://placehold.it/3000X1000" alt="Second slide">
             <div class="container">
 
             </div>
         </div>
         <div class="item">
-            <img class="third-slide" src="<?=$my_assets?>/images/slides/slide_3.jpg" alt="Third slide">
+            <img class="third-slide" src="https://placehold.it/3000X1000" alt="Third slide">
             <div class="container">
 
             </div>
         </div>
     </div>
-    <!--
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-
-        <span class="sr-only">Previous</span>
-
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-
-        <span class="sr-only">Next</span>
-
-    </a>
-     -->
 </div><!-- /.carousel -->
 
 
 
 
-    <div style="background-size:cover; background-image:url(<?=$my_assets?>/images/general/pink_gradient.png)" class="container callout_1">
+    <div style="background-size:cover; background-image:url(<?=$my_assets?>/images/general/pink_gradient.png)" class="container-fluid callout_1">
         <div class="row">
-            <div class=".col-lg-12">
-                <p class="lead">We are insurance specialists focusing solely on strata. We provide insurance directly to strata managers, Australia-wide, and our specialist cover includes residential, commercial and mixed-use strata buildings.</p>
+            <div class="col-lg-12">
+                <p>We are insurance specialists focusing solely on strata. We provide insurance directly to strata managers, Australia-wide, and our specialist cover includes residential, commercial and mixed-use strata buildings.</p>
 
             </div>
 
@@ -242,126 +190,98 @@
 
 
 
-<!-- Marketing messaging and featurettes
-================================================== -->
-<!-- Wrap the rest of the page in another container to center all the content. -->
 
-<div class="container marketing">
+<div class="container-fluid marketing">
 
-    <!-- Three columns of text below the carousel -->
-
-    <?/*
-    <div class="row">
-        <div class="col-lg-4">
-            <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-            <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-            <h2>Heading</h2>
-            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-            <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-    </div><!-- /.row -->
-    */?>
-
-
-
-    <!-- START THE FEATURETTES -->
 
 
 <div class="featurettes">
 
 
     <div class="row featurette">
-        <div class="col-md-7">
+        <div class="col-md-7 col-lg-4 col-lg-offset-2">
             <h2 class="featurette-heading">Working with the strata experts.</h2>
-            <p class="lead">
+            <p>
                 Expert understands how important it is for you as a strata manager and your clients to be provided with leading advice and support to get the cover that is right for them. With a commitment to building long-term relationships with our strata managers, our goal is to work with our clients to provide the support and expertise needed to make things easy.
             </p>
-            <p class="lead">
+            <p>
                 Our team consists of highly experienced strata insurance professionals who have an in-depth understanding of strata insurance and the legislation within each state that affects it. Expert is positioned to provide market leading, specialist strata cover that protects the body corporate beyond their minimum legislative obligations.
             </p>
         </div>
-        <div class="col-md-5">
-            <img class="featurette-image img-responsive center-block" src="<?=$my_assets?>/images/tiles/tile_1.jpg" alt="Generic placeholder image">
+        <div class="col-md-5 col-lg-6">
+            <img class="featurette-image img-responsive" src="https://placehold.it/540X630" alt="Generic placeholder image">
         </div>
     </div>
 
 
 
-    <div style="background-color: #eeeeee;" class="row featurette">
-        <div class="col-md-7 col-md-push-5">
+    <div style="background-color:#ededed;" class="row featurette">
+        <div class="col-md-5 col-lg-4 col-lg-offset-2">
+            <img class="featurette-image img-responsive" src="https://placehold.it/540X630" alt="Generic placeholder image">
+        </div>
+
+        <div class="col-md-7 col-lg-6">
             <h2 class="featurette-heading">Everything you need and nothing you don’t.</h2>
-            <p class="lead">We understand your responsibilities can be very complex and demanding. We at Expert will make your strata insurance requirements something simple.</p>
-            <p class="lead">Whether the strata plans you manage are residential, commercial or mixed strata, Expert can provide you with a quote, Australia-wide. We offer a top class, comprehensive package of covers that include many additional and optional benefits to meet your client’s needs.</p>
+            <p>We understand your responsibilities can be very complex and demanding. We at Expert will make your strata insurance requirements something simple.</p>
+            <p>Whether the strata plans you manage are residential, commercial or mixed strata, Expert can provide you with a quote, Australia-wide. We offer a top class, comprehensive package of covers that include many additional and optional benefits to meet your client’s needs.</p>
 
         </div>
-        <div class="col-md-5 col-md-pull-7">
-            <img class="featurette-image img-responsive center-block" src="<?=$my_assets?>/images/tiles/tile_2.jpg" alt="Generic placeholder image">
-        </div>
+
     </div>
 
 
 
     <div class="row featurette">
-        <div class="col-md-7">
+        <div class="col-md-7 col-lg-4 col-lg-offset-2">
             <h2 class="featurette-heading">We’ve got you covered.</h2>
-            <p class="lead">When choosing insurance, premium is a major determining factor, but the policy wording and the manner in which claims are handled will determine how your choice of insurer performs. With Expert you’re not just getting high quality insurance cover but also the promise that we will deliver when you submit an eligible claim to ensure your claim is paid as soon as possible, and your client is satisfied.</p>
+            <p>When choosing insurance, premium is a major determining factor, but the policy wording and the manner in which claims are handled will determine how your choice of insurer performs. With Expert you’re not just getting high quality insurance cover but also the promise that we will deliver when you submit an eligible claim to ensure your claim is paid as soon as possible, and your client is satisfied.</p>
         </div>
-        <div class="col-md-5">
-            <img class="featurette-image img-responsive center-block" src="<?=$my_assets?>/images/tiles/tile_3.jpg" alt="Generic placeholder image">
+        <div class="col-md-5 col-lg-6">
+            <img class="featurette-image img-responsive" src="https://placehold.it/540X630" alt="Generic placeholder image">
         </div>
     </div>
 </div>
 
 
 
-    <div class="container callout_2">
+
+
+    <div class="callout_2">
         <div class="row">
-            <div class="col-md-3 col-md-offset-3 col-lg-3 col-lg-offset-3">
-                <p class="lead"><img src="<?=$my_assets?>/images/icons/phone.jpg" alt="Phone Logo"></p>
+            <div class="col-md-3 col-md-offset-3 col-lg-2 col-lg-offset-4">
+                <p><img src="<?=$my_assets?>/images/icons/phone.jpg" alt="Phone Logo"></p>
             </div>
 
             <div class="col-md-6 col-lg-6">
-                <p class="lead">Give us a call today. <br>1300 442 676</p>
+                <p>Give us a call today. <br>1300 442 676</p>
             </div>
         </div>
 
         <div class="row">
 
-            <div class="col-md-3 col-md-offset-3 col-lg-3 col-lg-offset-3">
-                <p class="lead"><img src="<?=$my_assets?>/images/icons/mail.jpg" alt="Phone Logo"></p>
+            <div class="col-md-3 col-md-offset-3 col-lg-2 col-lg-offset-4">
+                <p><img src="<?=$my_assets?>/images/icons/mail.jpg" alt="Phone Logo"></p>
             </div>
 
             <div class="col-md-6 col-lg-6">
-                <p class="lead">Write to us. <br>info@esi.com.au</p>
+                <p>Write to us. <br>info@esi.com.au</p>
             </div>
         </div>
 
     </div>
 
-    <!-- <hr class="featurette-divider">  -->
 
     <!-- /END THE FEATURETTES -->
 
 
     <!-- FOOTER -->
 
-    <div class="container contact_info">
+    <div class="contact_info">
 
 
         <div class="row">
-            <div class="col-md-6 col-lg-6">
-                <p class="lead"><img src="<?=$my_assets?>/images/general/logo_white.png" alt="ESI Logo"></p>
+            <div class="col-md-6 col-lg-5 col-lg-offset-1">
+                <p><img src="<?=$my_assets?>/images/general/logo_white.png" alt="ESI Logo"></p>
             </div>
             <div class="col-md-3 col-lg-3">
                 <address>Expert Strata Insurance<br>
@@ -388,8 +308,8 @@
 
     <footer>
 
-        <p>Copyright &copy; 2015 Expert Strata Insurance ABN 86 152 337 267 is an Authorised Representative of Austagencies P/L ABN 76 006 090 464 AFSL 244584.
-            Policies are underwritten by AAI Limited ABN 48 005 297 807 AFSL 230 859 trading as Vero Insurance.Terms and conditions Privacy policy | General insurance
+        <p><strong>Copyright</strong> &copy; 2015 Expert Strata Insurance ABN 86 152 337 267 is an Authorised Representative of Austagencies P/L ABN 76 006 090 464 AFSL 244584.
+            Policies are underwritten by AAI Limited ABN 48 005 297 807 AFSL 230 859 trading as Vero Insurance.<br><br><strong>Terms and conditions</strong> Privacy policy | General insurance
             code of practice | Complaints and disputes resolution | Website disclaimer</p>
     </footer>
 

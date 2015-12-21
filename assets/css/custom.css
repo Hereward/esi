@@ -5,7 +5,14 @@
 body {
     padding-bottom: 40px;
     color: #5a5a5a;
-    font-family: 'Slabo 27px', serif;
+
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.container-fluid {
+    padding-right: 0px;
+    padding-left: 0px;
+
 }
 
 p {
@@ -30,12 +37,23 @@ nav {
 
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
     color: #a71680;
-    background-color: #e7e7e7;
+    /* background-color: #e7e7e7; */
+    background-color: transparent;
     font-weight:bold;
 }
 
 footer {
     margin:20px;
+}
+
+footer p {
+    max-width:1000px;
+    margin:0px auto;
+    text-align:center;
+}
+
+footer strong {
+    color:#a71680;
 }
 
 
@@ -48,31 +66,49 @@ footer {
 
 /* Special class on .container surrounding .navbar, used for positioning it into place. */
 
+.callout_1, .carousel_static_caption, h2, .callout_2 {
+    font-family: 'Slabo 27px', 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+}
+
 .callout_1, .callout_2 {
     min-height:359px;
+}
+
+.callout_1 p {
+    font-size: 31px;
+    line-height: 37px;
+    font-weight: normal;
+    margin:auto;
+    max-width: 600px;
+    color:white;
+    text-align:center;
+
 }
 
 
 
 div.callout_2 {
     background-color:#ededed;
-    font-family: helvetica, arial, sans-serif;
+
     padding-top:30px;
     color: #a71680;
+    font-size: 31px;
+    line-height: 37px;
+    font-weight: normal;
 }
 
 
 
+
+
 .contact_info {
+    padding-top:30px;
+    padding-bottom:20px;
     background-color:#4c1156;
     min-height:200px;
     color:white;
 }
 
-.callout_1 p {
-   color:white;
-    text-align:center;
-}
 
 .callout_1 .row {
     margin:80px 0px 50px 0px;
@@ -93,7 +129,7 @@ div.callout_2 {
     background-color:#4c1156;
     color:#ea5153;
     font-size:13px;
-    font-family:helvetica, arial, sans-serif;
+    /* font-family:helvetica, arial, sans-serif; */
 }
 
 .taskbar p {
@@ -130,9 +166,6 @@ div.callout_2 {
     width: auto;
 }
 
-.navbar-header {
-    margin-left:30px !important;
-}
 
 
 /* CUSTOMIZE THE CAROUSEL
@@ -140,7 +173,7 @@ div.callout_2 {
 
 /* Carousel base class */
 .carousel {
-    height: 649px;
+    /* height: 649px; */
     margin-bottom: 0px;
     /* max-width:1200px; */
     margin-left:auto;
@@ -153,7 +186,7 @@ div.callout_2 {
 
 /* Declare heights because of positioning of img element */
 .carousel .item {
-    height: 649px;
+    /* height: 649px; */
     background-color: #777;
     margin-left:auto;
     margin-right:auto;
@@ -169,18 +202,18 @@ div.callout_2 {
     /* min-width:960px; */
     /* text-align:center; */
     /* max-width:960px; */
-    height: 649px;
+    /* height: 649px; */
 }
 
 
 div.carousel_static_caption {
     position: absolute;
-    top: 300px;
+    top: 170px;
     z-index: 100;
     left: 25px;
     width:350px;
-    font-family: helvetica, arial, sans-serif;
-    font-size: 34px;
+   /* font-family: helvetica, arial, sans-serif; */
+    font-size: 38px;
     font-weight:normal;
     color:#a71680;
     line-height:40px;
@@ -194,17 +227,17 @@ div.carousel_static_caption {
 -------------------------------------------------- */
 
 /* Center align the text within the three columns below the carousel */
-.marketing .col-lg-4 {
-    margin-bottom: 20px;
-    text-align: center;
-}
+
 .marketing h2 {
     font-weight: normal;
 }
+
+/*
 .marketing .col-lg-4 p {
     margin-right: 10px;
     margin-left: 10px;
 }
+*/
 
 
 /* Featurettes
@@ -226,9 +259,10 @@ div.carousel_static_caption {
 }
 
 .featurette p {
-    font-family: helvetica, arial, sans-serif;
+    /* font-family: helvetica, arial, sans-serif; */
     font-size: 17px;
     font-weight:normal;
+    max-width:500px;
 }
 
 h2.featurette-heading {
@@ -241,7 +275,18 @@ h2.featurette-heading {
 /* RESPONSIVE CSS
 -------------------------------------------------- */
 
+
+
 @media (min-width: 768px) {
+
+    .navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+        margin-left: 20px;
+    }
+
+    .contact_info p {
+        color:white;
+    }
+
     /* Navbar positioning foo */
     /*
     .navbar-wrapper {
@@ -297,31 +342,28 @@ ul.nav {
     margin-right:15px;
 }
 
-@media (min-width: 768px) {
-    .callout_1 .lead {
-        font-size: 31px;
-        line-height: 37px;
-        font-weight: normal;
-        margin:auto;
-        max-width: 600px;
 
+@media (min-width: 1200px) {
+
+    div.carousel_static_caption {
+        left: 60px;
     }
 
-    .callout_2 .lead {
-        font-size: 31px;
-        line-height: 37px;
-        font-weight: normal;
-        margin:auto;
-        max-width: 600px;
-
+    .navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+        margin-left: 40px;
     }
 
-    .contact_info p {
-        color:white;
-
+    .taskbar p {
+        margin:12px 30px 5px 60px;
     }
 
 }
+
+
+
+
+
+
 
 
 
