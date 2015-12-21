@@ -190,6 +190,7 @@ div.callout_2 {
     background-color: #777;
     margin-left:auto;
     margin-right:auto;
+    /* min-height:500px; */
 }
 .carousel-inner > .item > img {
 /*
@@ -217,8 +218,6 @@ div.carousel_static_caption {
     font-weight:normal;
     color:#a71680;
     line-height:40px;
-
-
 
 }
 
@@ -274,6 +273,42 @@ h2.featurette-heading {
 
 /* RESPONSIVE CSS
 -------------------------------------------------- */
+
+@media (max-width: 767px) {
+    div.carousel_static_caption {
+
+        top: 150px;
+
+        left: 25px;
+        width:300px;
+
+        font-size: 20px;
+        font-weight:bold;
+
+        line-height:25px;
+
+    }
+
+}
+
+
+
+@media (max-width: 500px) {
+    div.carousel_static_caption {
+
+        top: 100px;
+
+        left: 25px;
+        width:300px;
+
+        font-size: 20px;
+        font-weight:bold;
+
+        line-height:25px;
+
+    }
+
+}
 
 
 

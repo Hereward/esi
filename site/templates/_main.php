@@ -145,7 +145,9 @@
 
 
         <div class="item active">
-            <img class="first-slide" src="https://placehold.it/3000X1000" alt="First slide">
+            <img class="first-slide visible-lg-inline" src="https://placehold.it/3000X1000" alt="First slide">
+            <img class="first-slide visible-md-inline" src="https://placehold.it/1500X750" alt="First slide">
+            <img class="first-slide visible-xs-inline visible-sm-inline" src="https://placehold.it/1000X500" alt="First slide">
             <div class="container">
                 <!---
                 src="$my_assets/images/slides/slide_1.jpg"
@@ -159,13 +161,17 @@
             </div>
         </div>
         <div class="item">
-            <img class="second-slide" src="https://placehold.it/3000X1000" alt="Second slide">
+            <img class="second-slide visible-lg-inline" src="https://placehold.it/3000X1000" alt="Second slide">
+            <img class="second-slide visible-md-inline" src="https://placehold.it/1500X750" alt="Second slide">
+            <img class="second-slide visible-xs-inline visible-sm-inline" src="https://placehold.it/1000X500" alt="Second slide">
             <div class="container">
 
             </div>
         </div>
         <div class="item">
-            <img class="third-slide" src="https://placehold.it/3000X1000" alt="Third slide">
+            <img class="third-slide visible-lg-inline" src="https://placehold.it/3000X1000" alt="Third slide">
+            <img class="third-slide visible-md-inline" src="https://placehold.it/1500X750" alt="Third slide">
+            <img class="third-slide visible-xs-inline visible-sm-inline" src="https://placehold.it/1000X500" alt="Third slide">
             <div class="container">
 
             </div>
