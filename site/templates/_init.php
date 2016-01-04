@@ -23,6 +23,14 @@ $bs = "$my_assets/bootstrap";
 $title = $page->get('headline|title'); // headline if available, otherwise title
 $content = $page->body;
 $sidebar = $page->sidebar;
+$settings = $pages->get("/settings/");
+
+//$logo_1 = $settings->company_logo->eq(0);
+//$logo_1_url = $logo_1->url;
+
+//die($logo_1_url);
+
+//die($settings->company_logo[0]->url);
 
 
 // We refer to our homepage a few times in our site, so we preload a copy 

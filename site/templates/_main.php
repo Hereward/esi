@@ -6,13 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
+    <meta name="description" content="<?=$settings->site_meta_description?>">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
     <link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 
-    <title>Expert Strata Insurance Pty Ltd</title>
+    <title><?=$settings->site_title?></title>
 
     <!-- Bootstrap core CSS -->
     <link href="<?=$bs?>/css/bootstrap.min.css" rel="stylesheet">
@@ -54,7 +54,7 @@
     <div class="sub-container">
         <div class="row">
             <div class="col-sm-12">
-                <p>Straight forward strata insurance without all the mumbo jumbo. That’s expert… built for strata managers</p>
+                <?=$page->headline?>
             </div>
         </div>
 
@@ -76,7 +76,7 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="#"><img src="<?=$my_assets?>/images/general/logo.png"></a>
+                            <a class="navbar-brand" href="#"><img src="<?=$settings->company_logo->eq(0)->url?>"></a>
                         </div>
 
                         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -147,6 +147,14 @@
 
 <!-- Carousel
 ================================================== -->
+<?
+  $carousel = $pages->get("/carousel/");
+  $sc = 1;
+?>
+
+
+
+
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -157,12 +165,41 @@
 
     <div class="carousel-inner" role="listbox">
 
+
+
+        <? foreach ($carousel->slides as $slide) { ?>
+            <? $img_url = $slide->slide_image->url; ?>
+
+            <div class="item <?=($sc==1)?'active':'';?>">
+                <img class="second-slide visible-lg-inline" src="<?=$img_url?>" alt="slide">
+                <img class="second-slide visible-md-inline" src="<?=$img_url?>" alt="slide">
+                <img class="second-slide visible-xs-inline visible-sm-inline" src="<?=$img_url?>" alt="slide">
+                <div class="container">
+                    <div class="carousel-caption">
+                        <?=$page->headline?>
+
+                        <!-- <h1>Example headline.</h1> -->
+
+                        <!-- <p>Note: If you're viewing this page via a  URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p> -->
+
+                       <!-- <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p> -->
+                    </div>
+
+                </div>
+            </div>
+
+            <? $sc++ ?>
+        <? } ?>
+
+
+
+<? /*
         <div class="item active">
             <img class="first-slide visible-lg-inline" src="https://placehold.it/3000X1000" alt="First slide">
             <img class="first-slide visible-md-inline" src="https://placehold.it/1000X500" alt="First slide">
             <img class="first-slide visible-xs-inline visible-sm-inline" src="https://placehold.it/800X400" alt="First slide">
             <div class="container">
-                <!---
+                <!--
                 src="$my_assets/images/slides/slide_1.jpg"
                 <div class="carousel-caption">
 
@@ -189,6 +226,7 @@
 
             </div>
         </div>
+*/ ?>
     </div>
 </div><!-- /.carousel -->
 
@@ -199,7 +237,7 @@
         <div class="row">
             <div class="sub-container">
                 <div class="col-lg-12">
-                    <p>We are insurance specialists focusing solely on strata. We provide insurance directly to strata managers, Australia-wide, and our specialist cover includes residential, commercial and mixed-use strata buildings.</p>
+                    <?=$page->callout_text?>
                 </div>
             </div>
         </div>
@@ -209,9 +247,42 @@
 
 
 
-<div class="container-fluid">
 
+
+
+<div class="container-fluid">
     <div class="featurettes">
+
+        <? $tc = 1; ?>
+        <? foreach($page->tiles as $tile) { ?>
+
+            <div class="row featurette <?=($tc % 2 == 0)?'even':'';?>">
+                <div class="sub-container">
+                    <? if ($tc % 2 == 0) { ?>
+                        <div class="col-xs-12 col-sm-6 hidden-xs">
+                            <img class="img-responsive" src="<?=$tile->tile_image->url?>" alt="Generic placeholder image">
+                        </div>
+                    <? } ?>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="featurette_centerer">
+                            <div class="featurette_centered">
+                                <h2 class="featurette-heading"><?=$tile->tile_title?></h2>
+                                <?=$tile->tile_text?>
+                                <div style="<?=($tc % 2 == 0)?'margin-left:30px;':'';?>"><a class="btn btn-default btn-lg" href="#" role="button">Learn More</a></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 <?=($tc % 2 == 0)?'visible-xs-inline':'';?>">
+                        <img class="img-responsive" src="<?=$tile->tile_image->url?>" alt="Generic placeholder image">
+                    </div>
+
+                </div>
+            </div>
+
+                <? $tc++ ?>
+        <? } ?>
+    <!--
         <div class="row featurette">
             <div class="sub-container">
                 <div class="col-xs-12 col-sm-6">
@@ -278,10 +349,11 @@
         </div>
 
 
+
+
+-->
+
     </div>
-
-
-
 </div>
 
 
@@ -292,20 +364,20 @@
         <div class="sub-container">
             <div class="row">
                 <div class="col-sm-5">
-                    <p style=margin-right:20px;" class="pull-right"><img src="<?=$my_assets?>/images/icons/phone.jpg" alt="Phone Logo"></p>
+                    <p style=margin-right:20px;" class="pull-right"><img src="<?=$my_assets?>/images/icons/phone.jpg" alt="Phone icon"></p>
                 </div>
                 <div class="col-sm-7">
-                    <p style=margin-left:20px;" class="pull-left">Give us a call today. <br>1300 442 676</p>
+                    <p style=margin-left:20px;" class="pull-left">Give us a call today. <br><?=$settings->company_1300_phone_number?></p>
                 </div>
 
             </div>
 
             <div class="row">
                 <div class="col-sm-5">
-                    <p style=margin-right:20px;" class="pull-right"><img src="<?=$my_assets?>/images/icons/mail.jpg" alt="Email Logo"></p>
+                    <p style=margin-right:20px;" class="pull-right"><img src="<?=$my_assets?>/images/icons/mail.jpg" alt="Email icon"></p>
                 </div>
                 <div class="col-sm-7">
-                    <p style=margin-left:20px;" class="pull-left">Write to us. <br>info@esi.com.au</p>
+                    <p style=margin-left:20px;" class="pull-left">Write to us. <br><?=$settings->company_email?></p>
                 </div>
 
             </div>
@@ -334,24 +406,13 @@
         <div class="sub-container">
             <div class="row">
                 <div class="col-md-6 col-lg-5 col-lg-offset-1">
-                    <p><img src="<?=$my_assets?>/images/general/logo_white.png" alt="ESI Logo"></p>
+                    <p><img src="<?=$settings->company_logo->eq(1)->url?>" alt="ESI Logo"></p>
                 </div>
                 <div class="col-md-3 col-lg-3">
-                    <address>Expert Strata Insurance<br>
-                    ABN 86 152 337 267<br>
-                    AFSL 230 859</address>
+                    <?=$settings->company_data?>
                 </div>
                 <div class="col-md-3 col-lg-3">
-                    <address>
-                    Level 13, 141 Walker Street <br>
-                    North Sydney <br>
-                    NSW 2060<br>
-                    PO Box 1813 <br>
-                    North Sydney NSW 2059 <br><br>
-                    Telephone. 1300 442 676 <br>
-                    Email. info@esi.com.au<br>
-                    Claims. claims@esi.com.au <br>
-                    </address>
+                    <?=$settings->company_address?>
                 </div>
             </div>
         </div>
@@ -363,9 +424,11 @@
 <footer>
         <div class="container-fluid">
         <div class="sub-container">
-            <p><strong>Copyright</strong> &copy; 2015 Expert Strata Insurance ABN 86 152 337 267 is an Authorised Representative of Austagencies P/L ABN 76 006 090 464 AFSL 244584.
-                Policies are underwritten by AAI Limited ABN 48 005 297 807 AFSL 230 859 trading as Vero Insurance.<br><br><strong>Terms and conditions</strong> Privacy policy | General insurance
-                code of practice | Complaints and disputes resolution | Website disclaimer</p>
+            <?=$settings->company_copyright?>
+            <div style="margin-top:10px;">
+                <?=$settings->company_terms?>
+            </div>
+
         </div>
         </div>
     </footer>

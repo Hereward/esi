@@ -211,6 +211,7 @@ div.callout_2 {
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
     z-index: 10;
+    padding-bottom: 90px;
 }
 
 /* Declare heights because of positioning of img element */
@@ -237,11 +238,30 @@ div.callout_2 {
 }
 
 
-div.carousel_static_caption {
+.carousel-caption p {
 
+    font-family: 'Slabo 27px', 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+    max-width:400px;
+    text-align:left;
+
+    /* margin-bottom: 20px; */
+    font-size: 38px;
+    line-height:40px;
+
+}
+
+
+
+
+
+
+div.carousel_static_caption {
+    display:none;
     position: absolute;
     top: 280px;
     z-index: 100;
+   /* background-color: white; */
+
     /*
     left: 25px;
     width:350px;
@@ -254,10 +274,16 @@ div.carousel_static_caption {
     line-height:40px;
     width:100%
 
+
 }
 
 .carousel_static_caption p {
     max-width:400px;
+    background: rgb(54, 25, 25); /* Fall-back for browsers that don't
+                                    support rgba */
+    background: rgba(255, 255, 255, .8);
+    padding:20px;
+    border-radius: 10px;
 }
 
 
@@ -379,6 +405,12 @@ h2.featurette-heading {
     }
 
 
+    .carousel-caption {
+        padding-bottom: 40px;
+    }
+
+
+
 }
 
 
@@ -450,6 +482,14 @@ h2.featurette-heading {
 
     }
 
+    .carousel_static_caption p {
+        padding:10px;
+    }
+
+    .carousel-caption {
+        padding-bottom: 30px;
+    }
+
 }
 
 @media  (max-width: 900px) {
@@ -460,6 +500,12 @@ h2.featurette-heading {
         font-weight:normal;
         line-height:30px;
 
+    }
+
+
+    .carousel-caption p {
+        font-size: 24px;
+        line-height:30px;
     }
 
     .container-fluid {
@@ -560,11 +606,7 @@ h2.featurette-heading {
     }
 
     /* Bump up size of carousel content */
-    .carousel-caption p {
-        margin-bottom: 20px;
-        font-size: 21px;
-        line-height: 1.4;
-    }
+
 
     /*
     .featurette-heading {

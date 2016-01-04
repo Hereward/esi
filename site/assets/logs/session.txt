@@ -1,5 +1,0 @@
-2015-12-09 17:59:05	hereward	http://esi/processwire/login/	Successful login for 'hereward'
-2015-12-11 17:58:28	hereward	http://esi/processwire/login/	Successful login for 'hereward'
-2015-12-11 23:57:02	hereward	http://esi/processwire/login/	Successful login for 'hereward'
-2015-12-12 03:44:31	hereward	http://esi/processwire/login/	Successful login for 'hereward'
-2015-12-14 23:01:08	hereward	http://esi/processwire/login/	Successful login for 'hereward'
