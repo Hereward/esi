@@ -117,3 +117,11 @@ function renderNavTree($items, $maxDepth = 0, $fieldNames = '', $class = 'nav') 
 	return $out;
 }
 
+function process_template($path) {
+    ob_start();
+    include($path);
+    $output = ob_get_contents();
+    ob_end_clean();
+    return $output;
+}
+

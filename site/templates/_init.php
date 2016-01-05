@@ -18,12 +18,25 @@
 // Variables for regions we will populate in _main.php. Here we also assign 
 // default values for each of them.
 
+$useMain = true;
 $my_assets = $config->urls->root.'assets';
 $bs = "$my_assets/bootstrap";
 $title = $page->get('headline|title'); // headline if available, otherwise title
 $content = $page->body;
-$sidebar = $page->sidebar;
+//$sidebar = $page->sidebar;
 $settings = $pages->get("/settings/");
+$doc_head_path = "./doc_head.php";
+$taskbar_path = "./taskbar.php";
+$navbar_path = "./navbar.php";
+$doc_foot_path = "./doc_foot.php";
+$carousel_path = "./carousel.php";
+$inc_carousel = false;
+$footer_path =  "./footer.php";
+
+$content_path = '';
+
+//$config->appendTemplateFile = '_main.php';
+
 
 //$logo_1 = $settings->company_logo->eq(0);
 //$logo_1_url = $logo_1->url;
