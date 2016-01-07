@@ -1,0 +1,213 @@
+<?php
+/**
+ * Processwire 'FormHelper' module
+ * 
+ * Extends InputfieldForm with additional features.
+ * 
+ * @author pwFoo
+ * @since 2015-02-20
+ * 
+ * ProcessWire 2.x
+ * Copyright (C) 2011 by Ryan Cramer
+ * Licensed under GNU/GPL v2, see LICENSE.TXT
+ *
+ * http://www.processwire.com
+ * http://www.ryancramer.com
+ */
+class FormHelper extends WireData implements Module {
+    /**
+     * getModuleInfo is a module required by all modules to tell ProcessWire about them
+     * @return array
+     */
+    public static function getModuleInfo() {
+        return array(
+            'title'     => 'FormHelper',
+            'summary'   => 'Extends InputfieldForm with additional features.',
+            'version'   => '0.8.5',
+        );
+    } 
+    
+    /** @var integer Form instance counter */
+    protected static $instanceCount = 0;
+    
+    /** @var integer Current instance number */
+    protected $instanceId;
+    
+    /**
+     * Setup needed hooks to extend InputfieldForm object
+     */
+    public function init() {
+        // Extend InputfieldForm object
+        $this->addHookProperty('InputfieldForm::fhSubmitBtn', $this, 'fhSubmitBtn');
+        $this->addHookProperty('InputfieldForm::fhState', $this, 'fhState');
+        $this->addHookProperty('InputfieldForm::fhFiles', $this, 'fhFiles');
+        $this->addHook('InputfieldForm::fhCkeditorImagePlugin', $this, 'fhCkeditorImagePlugin');
+        $this->addHook('InputfieldForm::fhProcessForm', $this, 'fhProcessForm');
+        $this->addHook('InputfieldForm::fhJsConfig', $this, 'fhJsConfig');
+        $this->addHook('InputfieldForm::fhValue', $this, 'fhValue');
+        
+        // Process file / image WireUploads / upload error handling
+        $this->addHookAfter('InputfieldFile::processInput', $this, 'fhProcessFileField');
+    }
+
+    /**
+     * Generate a form object
+     * @param Page|Template|InputfieldForm|Array $source Fields to build the form (optional, FormHelperExtra)
+     * @param Array $skip Fields to skip won't be added to the form (optional, FormHelperExtra)
+     * @param Page $refPage Use field settings and values to create the Inputfields (optional, FormHelperExtra)
+     * @param boolean $styled Use PW default (admin) styles or an unstyled form (optional, FormHelperExtra)
+     * @return InputfieldForm
+     */
+    public function create($source = null, $skip = null, $refPage = null, $styled = null) {        
+        $this->instanceId = ++self::$instanceCount;
+        $form = $this->modules->get('InputfieldForm');
+        $form->attr('id+name', 'fhForm' . $this->instanceId);
+        $form->fhSubmitBtn = $this->fhSubmitBtn();
+        $form->fhIgnore = true;
+        $form->fhState = null;
+        
+        if ($styled) {
+            $this->pwAdminStyles($styled);
+        }
+        
+        if ($source !== null && $this->modules->isInstalled('FormHelperExtra')) {
+            $this->modules->get('FormHelperExtra')->parse($form, $source, $skip, $refPage);
+        }
+        
+        return $form;
+    }
+    
+    /**
+     * jsConfig settings needed by wysiwyg editor prepended to "$config->scripts"
+     * @return string JavaScript path config
+     */
+    public function fhJsConfig(hookEvent $event) {
+        $jsConfig = wire('config')->js();
+        $jsConfig['debug'] = wire('config')->debug;                                                          
+        $jsConfig['urls'] = array(     
+            'root' => wire('config')->urls->root,
+            'admin' => wire('config')->urls->admin,
+            'modules' => wire('config')->urls->modules,                    
+            'core' => wire('config')->urls->core,                                
+            'files' => wire('config')->urls->files,                     
+            'templates' => wire('config')->urls->templates,                                                   
+            'adminTemplates' => wire('config')->urls->adminTemplates, 
+            'modals' => wire('config')->modals,
+        );
+        $event->return = '<script type="text/javascript">var config = ' . json_encode($jsConfig) . '</script>';
+    }
+    
+    /**
+     * pwInage CKeditor plugin needs a page id field added to form.
+     * @param integer $pageId Reference CKEditor the page id
+     * @return object Hidden Inputfield with page id
+     */
+    public function fhCkeditorImagePlugin(hookEvent $event) {
+        $pageId = $event->arguments[0];
+        // generate CKEditor helper field
+        $f = wire('modules')->get('InputfieldText');
+        $f->attr('id+name','Inputfield_id');
+        $f->attr('value',$pageId);
+        $f->attr('type','hidden');
+        $f->fhIgnore = true;
+        $f->skipLabel = 4;
+        $event->return = $f;
+    }
+    
+    /**
+     * Get (un-)sanitized form field value
+     * @param string $field Name of form field
+     * @param string $sanitizerName Name of the PW sanitizer to use (optional)
+     * @return string Value of given form field
+     */
+    public function fhValue(hookEvent $event) {
+        $field = $event->object->get($event->arguments[0]);
+
+        // Set sanitizer type via function argument or field settings
+        if (!empty($event->arguments[1])) {
+            $sanitizerName = $event->arguments[1];
+            return $event->return = wire('sanitizer')->$sanitizerName($field->value);
+        }
+        elseif(!empty($field->fhSanitizer)) {
+            $sanitizerName = $field->fhSanitizer;
+            return $event->return = wire('sanitizer')->$sanitizerName($field->value);
+        }
+        $event->return =  $field->value;
+    }
+      
+    /**
+     * Extended PW form api processing
+     * @return boolean not submitted (null), sumbitted with errors (false) or sucessfully submitted (true)
+     */
+    public function ___fhProcessForm(hookEvent $event) {
+        $form = $event->object;
+        $submitBtn = $form->fhSubmitBtn;
+        $form->add($submitBtn);
+
+        if(!wire('input')->post->{$submitBtn->name}) {
+            return $event->return = $form->fhState = null;  // not submitted, stop here
+        }
+        if(!wire('session')->CSRF->hasValidToken()) {
+            $submitBtn->error($this->_('Form session token invalid!'));    // validate CSRF token
+        }
+        
+        $form->processInput(wire('input')->post);   // process form values
+        
+        /*if (self::$instanceCount == 1) {   // Single form instances only, trouble with multiple form instances via form API
+            wire('session')->CSRF->resetToken();   // prevent double submitted forms
+        }*/
+        
+        if (count($form->getErrors())) {
+            return $event->return = $form->fhState = false; // submitted with errors
+        }
+        return $event->return = $form->fhState = true;      // submitted without errors
+    }
+
+    /**
+     * Validate file upload by WireUpload
+     */
+    protected function fhProcessFileField(hookEvent $event) {
+        $field = $event->object;
+        $uploadErrors = $field->getWireUpload()->getErrors();
+        if ($uploadErrors) {
+            foreach ($uploadErrors as $uploadError) {
+                $field->error($uploadError);
+            }
+        }
+        // Add uploaded files as array with path to the field 
+        if (strlen($field->value)) {
+            $field->fhFiles = array();
+            $files = explode("|", $field->value);
+            foreach ($files as &$file) {
+                $file = $field->destinationPath . $file;
+            }
+            $field->fhFiles = $files;
+        }
+    }
+    
+    /**
+     * Use admin / custom form styles 
+     * @param boolean|string $style true or an css file to load
+     */
+    protected function pwAdminStyles($style) {
+        $this->config->styles->add($this->config->urls->adminTemplates . 'styles/font-awesome/css/font-awesome.min.css');
+        
+        if ($style === true) {
+            $style = $this->config->urls->AdminThemeDefault . 'styles/main-classic.css';
+        }
+        $this->config->styles->add($style);
+    }
+    
+    /**
+     * Generate a form submit button
+     * @return InputfieldSubmit PW form Inputfield submit button
+     */
+    protected function fhSubmitBtn() {
+        $submit = $this->modules->get('InputfieldSubmit');
+        $submit->skipLabel = 4; // Inputfield::skipLabelBlank;
+        $submit->attr('id+name', 'fhSubmit' . $this->instanceId);
+        $submit->attr('value', $this->_('Submit'));
+        $submit->fhIgnore = true;
+        return $submit;
+    }
+}

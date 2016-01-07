@@ -18,6 +18,8 @@
 // Variables for regions we will populate in _main.php. Here we also assign 
 // default values for each of them.
 
+$body_style = '';
+$logged_in = ($user->isLoggedin())?true:false;
 $useMain = true;
 $my_assets = $config->urls->root.'assets';
 $bs = "$my_assets/bootstrap";
@@ -32,6 +34,7 @@ $doc_foot_path = "./doc_foot.php";
 $carousel_path = "./carousel.php";
 $inc_carousel = false;
 $footer_path =  "./footer.php";
+$carousel_navbar_class = '';
 
 $content_path = '';
 

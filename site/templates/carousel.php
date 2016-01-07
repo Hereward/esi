@@ -22,7 +22,7 @@
                 <img class="second-slide visible-xs-inline visible-sm-inline" src="<?=$img_url?>" alt="slide">
                 <div class="container">
                     <div class="carousel-caption">
-                        <?=$page->headline?>
+                        <p><?=$page->headline?></p>
 
                         <!-- <h1>Example headline.</h1> -->
 

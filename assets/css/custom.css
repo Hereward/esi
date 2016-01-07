@@ -2,6 +2,8 @@
 -------------------------------------------------- */
 /* Padding below the footer and lighter body text */
 
+
+
 body {
     padding-bottom: 40px;
     color: #5a5a5a;
@@ -29,6 +31,69 @@ p {
 
 }
 
+
+nav {
+    font-family: 'Montserrat', sans-serif;
+    color:#a71680;
+
+    margin-bottom:0px !important;
+}
+
+.navbar {
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 0px;
+    border:0px;
+
+    /* border: 1px solid transparent; */
+}
+
+ul.nav {
+    margin:25px 0;
+    position:relative;
+    left:20px;
+
+}
+
+.navbar-carousel {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    left: 0;
+    z-index: 20;
+    opacity:0.8;
+}
+
+.navbar-carousel_logged_out_home {
+    position: absolute;
+    top: 0px;
+    right: 0;
+    left: 0;
+    z-index: 20;
+    opacity:0.8;
+}
+
+.navbar-carousel_logged_in_home {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    left: 0;
+    z-index: 20;
+    opacity:0.8;
+}
+
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+    color: #a71680;
+    background-color: transparent;
+    font-weight:bold;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #a71680;
+}
+
+
+/*
 .navbar {
     margin-bottom:0px;
     height:100px;
@@ -40,17 +105,10 @@ p {
 }
 
 
-ul.nav {
-    margin:25px 0;
-    position:relative;
-    left:20px;
-}
 
 
-nav {
-    font-family: 'Montserrat', sans-serif;
-    color:#a71680;
-}
+
+
 
 .navbar-default .navbar-brand {
     color: #a71680;
@@ -65,10 +123,12 @@ nav {
 
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
     color: #a71680;
-    /* background-color: #e7e7e7; */
+
     background-color: transparent;
     font-weight:bold;
 }
+
+*/
 
 footer {
     margin:20px;
@@ -86,13 +146,6 @@ footer strong {
 
 
 
-
-
-
-/* CUSTOMIZE THE NAVBAR
--------------------------------------------------- */
-
-/* Special class on .container surrounding .navbar, used for positioning it into place. */
 
 .callout_1, .carousel_static_caption, h2, .callout_2 {
     font-family: 'Slabo 27px', 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
@@ -160,6 +213,20 @@ div.callout_2 {
     /* font-family:helvetica, arial, sans-serif; */
 }
 
+.taskbar a, .taskbar a:visited {
+    color:#ea5153;
+
+    /* font-family:helvetica, arial, sans-serif; */
+}
+
+.taskbar a:hover {
+    color:white;
+    text-decoration:none;
+
+    /* font-family:helvetica, arial, sans-serif; */
+}
+
+
 .taskbar p {
     margin:12px 0px 5px 0px;
 }
@@ -170,18 +237,17 @@ div.callout_2 {
 
 }
 
+/*
 .navbar-wrapper {
-    position: absolute;
-    top: 40px;
-    right: 0;
-    left: 0;
-    z-index: 20;
     margin-top:0px;
-    opacity:0.7;
 }
+*/
 
 
-/* Flip around the padding for proper display in narrow viewports */
+
+
+
+/*
 .navbar-wrapper > .container {
     padding-right: 0;
     padding-left: 0;
@@ -192,6 +258,19 @@ div.callout_2 {
 }
 .navbar-wrapper .navbar .container {
     width: auto;
+}
+*/
+
+
+/* Login Form
+-------------------------------------------------- */
+.login {
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+form#fuLoginForm, form#fuRegisterForm  {
+    max-width:500px;
 }
 
 
@@ -533,11 +612,13 @@ h2.featurette-heading {
         max-width:500px;
     }
 
+    /*
     .navbar-wrapper {
         position: static;
 
         opacity:1;
     }
+    */
 
 }
 
@@ -563,12 +644,14 @@ h2.featurette-heading {
         max-width:420px;
     }
 
-
+/*
     .navbar-wrapper {
         position: static;
 
         opacity:1;
     }
+
+    */
 
 }
 
@@ -582,28 +665,19 @@ h2.featurette-heading {
         color:white;
     }
 
-    /* Navbar positioning foo */
-    /*
-    .navbar-wrapper {
-        margin-top: 20px;
-    }
-    */
 
     /*
-    .navbar-wrapper .container {
-        padding-right: 15px;
-        padding-left: 15px;
-    }
-    */
     .navbar-wrapper .navbar {
         padding-right: 0;
         padding-left: 0;
     }
 
-    /* The navbar becomes detached from the top, so we round the corners */
+
     .navbar-wrapper .navbar {
         border-radius: 4px;
     }
+
+    */
 
     /* Bump up size of carousel content */
 
@@ -631,6 +705,8 @@ h2.featurette-heading {
     }
 
 }
+
+
 
 
 

@@ -1,0 +1,155 @@
+<?php
+/**
+ * Processwire 'FormHelperExtra' module
+ * 
+ * Additional type field, InputfieldCKEditor and pwImage plugin handling.
+ * 
+ * @author pwFoo
+ * @since 2015-02-20
+ * 
+ * ProcessWire 2.x
+ * Copyright (C) 2011 by Ryan Cramer
+ * Licensed under GNU/GPL v2, see LICENSE.TXT
+ *
+ * http://www.processwire.com
+ * http://www.ryancramer.com
+ */
+class FormHelperExtra extends WireData implements Module {
+    /**
+     * getModuleInfo is a module required by all modules to tell ProcessWire about them
+     * @return array
+     */
+    public static function getModuleInfo() {
+        return array(
+            'title' => 'FormHelperExtra (testing!)',
+            'summary' => 'Create form by Template | Page | InputfieldForm | Array source and file handling with temp pages.',
+            'version' => '0.3.1',
+            'requires'  => 'FormHelper>=0.8.2',
+        );
+    }
+    
+    protected static $tempUploadPage = 'fhStorage';
+
+    /**
+     * Add hooks to InputfieldForm
+     */
+    public function init() { }
+
+    /**
+     * Add fields of a source to the PW form object
+     * @param object $form Current InputfieldForm
+     * @param Page|Template|InputfieldForm|Array $source Fields to build the form
+     * @param Array $skip Fields to skip won't be added to the form
+     * @param Page $refPage Use field settings and values to create the Inputfields
+     */
+    public function parse(&$form, $source = null, $skip = null, $refPage = null) {
+        if ($source instanceof Page) {
+            $fhFields = $source->getInputfields();  // Page Inputfields
+            $refPage = ($refPage ? $refPage : $source);
+        }
+        elseif ($source instanceof Template) {
+            $fhFields = $source->fields; // template fields
+            $refPage = ($refPage ? $refPage : $this->pages->get('name='.self::$tempUploadPage));
+        }
+        else {
+            $fhFields = $source; // InputfieldForm object || array with field information
+            $refPage = ($refPage ? $refPage : $this->pages->get('name='.self::$tempUploadPage));
+        }
+        
+        foreach ($fhFields as $field) {
+            if ($skip !== null && in_array($field->name, $skip))  continue;
+            
+            // Prepare Fieldtype fields
+            if ($field instanceof Field) {
+                $field = $this->prepareTypeField($field, $refPage);
+            }
+           
+            $form->add($field); // add current field to form
+            
+            // CKEditor with pwImage plugin
+            if ($field == 'InputfieldCKEditor') {
+                $pwImagePlugin = $form->fhCkeditorImagePlugin($refPage->id);
+                $form->add($pwImagePlugin);
+            }
+        }
+    }
+    
+    /**
+     * Create Inputfield from Field object
+     * @param object $field Instance of object Field
+     * @return object Inputfield of the given Field object
+     */
+    protected function prepareTypeField($field, $refPage) {
+        if ($field->type == 'FieldtypeImage' || $field->type == 'FieldtypeFile') {
+            return $this->prepareTypeFieldFile($field, $refPage);
+        }
+        return $field->getInputfield($refPage);
+    }
+    
+    /**
+     * Additional steps to create a Inputfield from Field object type file
+     * @return object Inputfield of type file
+     * @todo Additional changeable field settings
+     */
+    protected function prepareTypeFieldFile($field, $refPage) {
+        $f = $this->modules->get($field->inputfieldClass);
+        $f->name = $field->name;
+        $f->maxFiles = $field->maxFiles;
+        $f->overwrite = $field->overwrite;
+        $f->extensions = $field->extensions;
+        $f->maxFilesize = $field->maxFilesize;
+        $f->destinationPath = $refPage->destinationPath;
+        $f->attr("value", new Pageimages($refPage));
+        return $f;
+    }
+    
+    /**
+     * Create Formhelper hidden file storage (Fieldgroup, Template, Page)
+     */
+    public function ___install() { 
+        $fg = new Fieldgroup();
+        $fg->name = self::$tempUploadPage;
+        $fg->add('title');
+        $fg->save();
+        $this->message('FormHelperExtra temp file storage Fieldgroup "' . self::$tempUploadPage . '" created.');
+        
+        $t = new Template();
+        $t->name = self::$tempUploadPage;
+        $t->flags = Template::flagSystem;
+        $t->noParents = 1;
+        $t->fieldgroup = $fg;
+        $t->save();
+        $this->message('FormHelperExtra temp file storage Template "' . self::$tempUploadPage . '" created.');
+        
+        $storage = new Page();
+        $storage->template = $this->templates->get($t);
+        $storage->name = self::$tempUploadPage;
+        $storage->parent = $this->pages->get('/admin/');
+        $moduleInfo = self::getModuleInfo();
+        $storage->title = $moduleInfo['title'] . 'StoragePage';
+        $storage->addStatus(Page::statusHidden);
+        $storage->save();
+        $this->message('FormHelperExtra temp file storage Page "' . self::$tempUploadPage . '" created.');
+    }
+    
+    /**
+     * Delete Formhelper hidden file storage (Fieldgroup, Template, Page)
+     */
+    public function ___uninstall() {
+        $storage = $this->pages->get("name=". self::$tempUploadPage);
+        $storage->delete();
+        $this->message('FormHelperExtra temp file storage Page "' . self::$tempUploadPage . '" deleted.');
+         
+        $t = $this->templates->get(self::$tempUploadPage);
+        $fgid = (int) $t->fields->id;
+        $t->flags = Template::flagSystemOverride; 
+        $t->flags = 0;
+        $this->templates->delete($t);
+        $this->message('FormHelperExtra temp file storage Template "' . self::$tempUploadPage . '" deleted.');
+        
+        $fieldgroups = wire("fieldgroups");
+        $fg = $fieldgroups->get($fgid);
+        $fieldgroups->delete($fg);
+        $this->message('FormHelperExtra temp file storage Fieldgroup "' . self::$tempUploadPage . '" deleted.');
+    }    
+}

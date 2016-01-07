@@ -1,0 +1,12 @@
+<?
+$session->logout();
+$session->redirect("/");
+?>
+
+
+
+
+
+
+
+
