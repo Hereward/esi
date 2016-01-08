@@ -31,6 +31,9 @@
 
     <!-- Custom styles for this template -->
     <link href="<?=$my_assets?>/css/custom.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="<?=$my_assets?>/js/vendor/jquery.min.js"><\/script>')</script>
 </head>
 <!-- NAVBAR
 ================================================== -->

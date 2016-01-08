@@ -12,9 +12,21 @@ $fu = $modules->get('FrontendUser');
                 <p>If you are a new user, please register your details to access our complete list of forms, to request a quote or to lodge a claim.</p>
 
                 <form id="fuRegisterForm" name="fuRegisterForm" method="post" action="./" >
+                    <!--
                     <div class="form-group">
                         <label for="username">User Name</label>
                         <input id="username" class="form-control" name="username" type="text" placeholder="Username">
+                    </div>
+                    -->
+
+                    <div class="form-group">
+                         <label for="firstname">First Name</label>
+                         <input id="firstname" class="form-control" name="firstname" type="text">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lastname">Last Name</label>
+                        <input id="lastname" class="form-control" name="lastname" type="text">
                     </div>
 
                     <div class="form-group">
@@ -35,11 +47,23 @@ $fu = $modules->get('FrontendUser');
                         <button id="fhSubmit1" class="btn btn-default" name="fhSubmit1" value="Register" type="submit">Register</button>
 
                         <input type="hidden" name="<?=$session->CSRF->getTokenName(); ?>" value="<?=$session->CSRF->getTokenValue(); ?>" class="_post_token" >
+                        <input id="username"  name="username" type="hidden" value="">
                 </form>
+
+
             </div>
         </div>
     </div>
 </div>
+
+
+<script>
+    $(function(){
+        $('#email').on('change', function(e){
+            $('#username').val($('#email').val());
+        });
+    });
+</script>
 
 
 

@@ -39,7 +39,7 @@
 
                 <form id="fuLoginForm"  name="fuLoginForm" method="post" action="./">
                     <div class="form-group">
-                        <label for="username">User Name</label>
+                        <label for="username">Email Address</label>
                         <input id="username" class="form-control" name="username" type="text" placeholder="Username">
                     </div>
 
@@ -50,6 +50,9 @@
                     <button id="fhSubmit1" class="btn btn-default" name="fhSubmit1" value="Login" type="submit">Login</button> &nbsp; Don't have an account yet? <strong><a href="/member-area/register/">Register here</a></strong>
                     <input type="hidden" name="<?=$session->CSRF->getTokenName(); ?>" value="<?=$session->CSRF->getTokenValue(); ?>" class="_post_token" >
                 </form>
+
+
+
             </div>
 
         </div>
