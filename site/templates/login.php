@@ -1,4 +1,6 @@
 <?
+
+$inc_contact_info = false;
 $content_path = "./login_tpl.php";
 //$fu = $modules->get('FrontendUser');
 //$useMain = false;

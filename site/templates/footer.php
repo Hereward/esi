@@ -1,5 +1,6 @@
 <!-- FOOTER -->
 
+<? if ($inc_contact_info) { ?>
 <div class="contact_info">
         <div class="container-fluid">
         <div class="sub-container">
@@ -18,6 +19,7 @@
 
     </div>
 </div>
+<? } ?>
 
 
 <footer>

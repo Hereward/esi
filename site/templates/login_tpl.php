@@ -1,7 +1,7 @@
 <div class="container-fluid login">
     <div class="sub-container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 member_form">
                 <h2>Please log in.</h2>
                 <p>Sign in to access our complete list of forms, to request a quote or to lodge a claim.</p>
 

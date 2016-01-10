@@ -1,4 +1,7 @@
 <?
+
+$inc_contact_info = false;
+
 $content_path = "./register_tpl.php";
 $fu = $modules->get('FrontendUser');
 

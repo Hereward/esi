@@ -7,7 +7,7 @@ $fu = $modules->get('FrontendUser');
 <div class="container-fluid login">
     <div class="sub-container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 member_form">
                 <h2>Please register.</h2>
                 <p>If you are a new user, please register your details to access our complete list of forms, to request a quote or to lodge a claim.</p>
 

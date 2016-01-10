@@ -22,10 +22,12 @@ body {
 
 }
 
+/*
 .row {
     margin-right: -20px;
     margin-left: -20px;
 }
+*/
 
 p {
 
@@ -37,6 +39,14 @@ nav {
     color:#a71680;
 
     margin-bottom:0px !important;
+}
+
+.navbar-brand {
+    float: left;
+    height: auto;
+    padding: 15px 15px;
+    font-size: 18px;
+    line-height: 20px;
 }
 
 .navbar {
@@ -137,7 +147,7 @@ footer {
 footer p {
 
     margin:0px auto;
-    text-align:center;
+    text-align:left;
 }
 
 footer strong {
@@ -273,6 +283,10 @@ form#fuLoginForm, form#fuRegisterForm  {
     max-width:500px;
 }
 
+.member_form {
+    margin-bottom:20px;
+}
+
 
 
 /* CUSTOMIZE THE CAROUSEL
@@ -385,6 +399,10 @@ div.carousel_static_caption {
 
 /* Featurettes
 ------------------------- */
+
+div.featurette_button {
+    margin-bottom:30px;
+}
 
 div.featurette img {
     float:right;
@@ -592,6 +610,11 @@ h2.featurette-heading {
         padding-right:20px;
     }
 
+    .navbar-carousel_logged_out_home, .navbar-carousel_logged_in_home  {
+        top:0px;
+        position:static;
+    }
+
 }
 
 
@@ -700,9 +723,11 @@ h2.featurette-heading {
 @media (min-width: 1500px) {
 
 
-    .featurette.even h2, .featurette.even p {
+    .featurette.even h2, .featurette.even p, .featurette.even .featurette_button {
         margin-left:30px;
     }
+
+
 
 }
 

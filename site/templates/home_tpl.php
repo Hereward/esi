@@ -33,7 +33,7 @@
                             <div class="featurette_centered">
                                 <h2 class="featurette-heading"><?=$tile->tile_title?></h2>
                                 <?=$tile->tile_text?>
-                                <div style="<?=($tc % 2 == 0)?'margin-left:30px;':'';?>"><a class="btn btn-default btn-lg" href="#" role="button">Learn More</a></div>
+                                <div class="featurette_button"><a class="btn btn-default btn-lg" href="#" role="button">Learn More</a></div>
                             </div>
                         </div>
                     </div>

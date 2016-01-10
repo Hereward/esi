@@ -33,6 +33,8 @@ $navbar_path = "./navbar.php";
 $doc_foot_path = "./doc_foot.php";
 $carousel_path = "./carousel.php";
 $inc_carousel = false;
+$inc_footer = true;
+$inc_contact_info = true;
 $footer_path =  "./footer.php";
 $carousel_navbar_class = '';
 
