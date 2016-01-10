@@ -92,6 +92,10 @@ ul.nav {
     opacity:0.8;
 }
 
+.navbar-nav>li {
+    font-weight:bold;
+}
+
 .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
     color: #a71680;
     background-color: transparent;
