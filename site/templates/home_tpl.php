@@ -124,10 +124,10 @@
 
 
 
-<div class="callout_2">
-    <div class="container-fluid">
+
+    <div class="container-fluid callout_2">
         <div class="sub-container">
-            <div class="row">
+            <div class="row first">
                 <div class="col-sm-5">
                     <p style=margin-right:20px;" class="pull-right"><img src="<?=$my_assets?>/images/icons/phone.jpg" alt="Phone icon"></p>
                 </div>
@@ -158,4 +158,3 @@
             -->
         </div>
     </div>
-</div>
