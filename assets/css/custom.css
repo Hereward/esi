@@ -185,7 +185,7 @@ footer strong {
 
 
 
-div.callout_2 {
+div.callout_2, .featurette .callout_2 p {
     background-color:#ededed;
 
     padding-top:30px;
@@ -193,6 +193,15 @@ div.callout_2 {
     font-size: 34px;
     line-height: 37px;
     font-weight: normal;
+}
+
+.featurette .callout_2 p {
+    padding-top:0px;
+    background-color:transparent;
+}
+
+.contact .callout_2 {
+    background-color:transparent;
 }
 
 
@@ -415,6 +424,10 @@ div.carousel_static_caption {
 ------------------------- */
 
 .featurettes.products {
+    margin-top:100px;
+}
+
+.featurettes.contact {
     margin-top:100px;
 }
 

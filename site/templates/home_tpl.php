@@ -129,20 +129,20 @@
         <div class="sub-container">
             <div class="row first">
                 <div class="col-sm-5">
-                    <p style=margin-right:20px;" class="pull-right"><img src="<?=$my_assets?>/images/icons/phone.jpg" alt="Phone icon"></p>
+                    <p style="margin-right:20px;" class="pull-right"><img src="<?=$my_assets?>/images/icons/phone.jpg" alt="Phone icon"></p>
                 </div>
                 <div class="col-sm-7">
-                    <p style=margin-left:20px;" class="pull-left">Give us a call today. <br><strong><?=$settings->company_1300_phone_number?></strong></p>
+                    <p style="margin-left:20px;" class="pull-left">Give us a call today. <br><strong><?=$settings->company_1300_phone_number?></strong></p>
                 </div>
 
             </div>
 
             <div class="row">
                 <div class="col-sm-5">
-                    <p style=margin-right:20px;" class="pull-right"><img src="<?=$my_assets?>/images/icons/mail.jpg" alt="Email icon"></p>
+                    <p style="margin-right:20px;" class="pull-right"><img src="<?=$my_assets?>/images/icons/mail.jpg" alt="Email icon"></p>
                 </div>
                 <div class="col-sm-7">
-                    <p style=margin-left:20px;" class="pull-left">Write to us. <br><strong><?=$settings->company_email?></strong></p>
+                    <p style="margin-left:20px;" class="pull-left">Write to us. <br><strong><?=$settings->company_email?></strong></p>
                 </div>
 
             </div>
