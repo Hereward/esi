@@ -161,7 +161,7 @@ footer strong {
 
 
 
-.callout_1, .carousel_static_caption, h2, .callout_2 {
+.callout_1, .carousel_static_caption, h2, .callout_2, .featurette_callout {
     font-family: 'Slabo 27px', 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
 }
 
@@ -414,6 +414,10 @@ div.carousel_static_caption {
 /* Featurettes
 ------------------------- */
 
+.featurettes.products {
+    margin-top:100px;
+}
+
 div.featurette_button {
     margin-bottom:30px;
 }
@@ -422,9 +426,15 @@ div.featurette img {
     float:right;
 }
 
+div.featurette.even, div.featurette.grey {
+    background-color:#f8f8f8;
+}
+
 div.featurette.even img {
     float:left;
 }
+
+
 
 div.featurette {
     height:630px;
@@ -463,10 +473,28 @@ div.featurette {
     max-width:450px;
 }
 
+.featurette_callout p {
+    font-size: 31px;
+    line-height: 37px;
+    font-weight: normal;
+    margin:auto;
+    max-width: 600px;
+    color:white;
+    text-align:center;
+    color:#a71680;
+    margin-top:170px;
+}
+
+
 h2.featurette-heading {
     font-size:36px;
     color:#a71680;
     max-width:500px;
+}
+
+h2.featurette-heading-big {
+    font-size: 38px;
+    line-height: 40px;
 }
 
 
@@ -586,7 +614,7 @@ h2.featurette-heading {
         font-size:24px;
     }
 
-    .callout_1 p {
+    .callout_1 p, .featurette_callout p {
         font-size: 26px;
         line-height: 30px;
         font-weight: normal;
