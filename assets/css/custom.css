@@ -436,10 +436,12 @@ div.featurette.even img {
 
 
 
+/*
 div.featurette {
     height:630px;
     overflow:hidden;
 }
+*/
 
 .featurette_centerer {
     height:630px;
@@ -466,7 +468,7 @@ div.featurette {
 }
 
 
-.featurette p {
+.featurette p, .featurette li {
     /* font-family: helvetica, arial, sans-serif; */
     font-size: 17px;
     font-weight:normal;
@@ -606,7 +608,7 @@ h2.featurette-heading-big {
         height:auto;
     }
 
-    .featurette p {
+    .featurette p , .featurette li {
         font-size:14px;
     }
 
@@ -765,8 +767,12 @@ h2.featurette-heading-big {
 @media (min-width: 1500px) {
 
 
-    .featurette.even h2, .featurette.even p, .featurette.even .featurette_button {
+    .featurette.even h2, .featurette.even p, .featurette.even .featurette_button, .featurette_right_content {
         margin-left:30px;
+    }
+
+    .featurette_right_content {
+        margin-top:50px;
     }
 
 
