@@ -35,6 +35,10 @@ $fieldUser->addHookBefore('FrontendUser::auth', function($event) {
 });
 
 $fu->process("/member-area/");
+
+$navbar_class = "navbar_static";
+$taskbar_class = "taskbar_static";
+
 //echo $fu->render();
 ?>
 

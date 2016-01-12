@@ -5,4 +5,7 @@ if (!$logged_in) {
 }
 $content_path = "./member_tpl.php";
 
+$navbar_class = "navbar_static";
+$taskbar_class = "taskbar_static";
+
 

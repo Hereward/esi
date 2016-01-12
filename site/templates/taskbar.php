@@ -1,4 +1,4 @@
-<div style="display:<?=($logged_in)?'block':'none';?>" class="container-fluid taskbar hidden-xs">
+<div style="display:<?=($logged_in)?'block':'none';?>" class="container-fluid taskbar <?=$taskbar_class?> hidden-xs hidden-sm">
     <div class="row">
          <div class="sub-container">
             <div class="col-sm-12">

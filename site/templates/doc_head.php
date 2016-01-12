@@ -39,3 +39,8 @@
 ================================================== -->
 <body style="<?=$body_style?>">
 
+<div class="container-fluid claims_bg" style="<?=$bg_style?>; display:<?=($show_claims_bg)?'initial':'none'?>;"></div>
+
+
+
+

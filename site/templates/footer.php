@@ -5,13 +5,13 @@
         <div class="container-fluid">
         <div class="sub-container">
             <div class="row">
-                <div class="col-md-6 col-lg-5 col-lg-offset-1">
+                <div class="col-md-5">
                     <p><img src="<?=$settings->company_logo->eq(1)->url?>" alt="ESI Logo"></p>
                 </div>
-                <div class="col-md-3 col-lg-3">
+                <div class="col-md-2 col-md-offset-1">
                     <?=$settings->company_data?>
                 </div>
-                <div class="col-md-3 col-lg-3">
+                <div class="col-md-3 col-md-offset-1">
                     <?=$settings->company_address?>
                 </div>
             </div>

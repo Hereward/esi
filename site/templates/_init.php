@@ -19,6 +19,7 @@
 // default values for each of them.
 
 $body_style = '';
+$html_style = '';
 $logged_in = ($user->isLoggedin())?true:false;
 $useMain = true;
 $my_assets = $config->urls->root.'assets';
@@ -36,7 +37,14 @@ $inc_carousel = false;
 $inc_footer = true;
 $inc_contact_info = true;
 $footer_path =  "./footer.php";
-$carousel_navbar_class = '';
+
+$navbar_class = ($logged_in)?'navbar_logged_in':'navbar_logged_out';
+$taskbar_class = ($logged_in)?'taskbar_normal':'taskbar_static';
+
+$show_claims_bg = false;
+$bg_style = '';
+
+//$carousel_navbar_class = '';
 
 $content_path = '';
 
