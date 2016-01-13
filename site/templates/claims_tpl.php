@@ -1,5 +1,4 @@
 
-<!-- style="background: rgba(240,240,240,0.8);" -->
 
 
 
@@ -66,36 +65,31 @@
 
 
 <div class="container-fluid">
-    <div class="featurettes products last">
-        <div class="row featurette">
+    <div class="featurettes claims last">
+        <div class="row featurette grey">
             <div class="sub-container">
                 <div class="col-xs-12 col-sm-6">
                     <div class="featurette_left_content">
-                        <h2 class="featurette-heading">Interested?</h2>
-                        <p>Vestibulum eget aliquam velit. Duis efficitur, urna et congue pulvinar, justo leo consectetur massa, et sollicitudin massa lorem et dui. Vivamus fermentum, libero vel lacinia euismod, sem libero aliquam erat, vel vehicula risus lorem et libero.</p>
-
-                        <div class="featurette_button"><a class="btn btn-default btn-lg" href="#" role="button">Click here to register</a></div>
+                        <img class="img-responsive" src="<?=$page->tile_image->url?>" alt="<?=$page->tile_image->description?>">
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-6">
-                    <div class="product_download first">
-                        <h3>Proposal Form</h3>
-                        <div>download</div>
-                    </div>
-                    <div class="product_download">
-                        <h3>Product Summary Guide</h3>
-                        <div>download</div>
-                    </div>
-                    <div class="product_download">
-                        <h3>One Page Flyer</h3>
-                        <div>download</div>
-                    </div>
+                    <div class="featurette_centerer">
+                        <div class="featurette_centered featurette_right_content">
+                                <h2 class="featurette-heading"><?=$page->tile_title?>?</h2>
+                                <?=$page->tile_text?>
+                                <div class="claims_download first">
+                                    <div><a href="/"><img class="img-responsive" src="<?=$page->pdf_image->eq(0)->url?>" alt="<?=$page->pdf_image->eq(0)->description?>"></a></div>
+                                </div>
+                            </div>
+                        </div>
                 </div>
             </div>
         </div>
     </div>
 
 </div>
+
 
 
 

@@ -91,16 +91,13 @@
                 </div>
                 <div class="col-xs-12 col-sm-6">
                     <div class="product_download first">
-                        <h3>Proposal Form</h3>
-                        <div>download</div>
+                        <div><a href="/"><img class="img-responsive" src="<?=$page->pdf_image->eq(0)->url?>" alt="<?=$page->pdf_image->eq(0)->description?>"></a></div>
                     </div>
                     <div class="product_download">
-                        <h3>Product Summary Guide</h3>
-                        <div>download</div>
+                        <div><a href="/"><img class="img-responsive" src="<?=$page->pdf_image->eq(1)->url?>" alt="<?=$page->pdf_image->eq(1)->description?>"></a></div>
                     </div>
                     <div class="product_download">
-                        <h3>One Page Flyer</h3>
-                        <div>download</div>
+                        <div><a href="/"><img class="img-responsive" src="<?=$page->pdf_image->eq(2)->url?>" alt="<?=$page->pdf_image->eq(2)->description?>"></a></div>
                     </div>
                 </div>
             </div>
