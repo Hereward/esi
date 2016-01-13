@@ -30,7 +30,7 @@
                     <? } ?>
                     <div class="col-xs-12 col-sm-6">
                         <div class="featurette_centerer">
-                            <div class="featurette_centered">
+                            <div class="featurette_centered <?=($tc % 2 == 0)?'featurette_right_content':'featurette_left_content';?>">
                                 <h2 class="featurette-heading"><?=$tile->tile_title?></h2>
                                 <?=$tile->tile_text?>
                                 <div class="featurette_button"><a class="btn btn-default btn-lg" href="#" role="button">Learn More</a></div>

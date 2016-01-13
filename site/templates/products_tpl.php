@@ -83,9 +83,8 @@
             <div class="sub-container">
                 <div class="col-xs-12 col-sm-6">
                     <div class="featurette_left_content">
-                        <h2 class="featurette-heading">Interested?</h2>
-                        <p>Vestibulum eget aliquam velit. Duis efficitur, urna et congue pulvinar, justo leo consectetur massa, et sollicitudin massa lorem et dui. Vivamus fermentum, libero vel lacinia euismod, sem libero aliquam erat, vel vehicula risus lorem et libero.</p>
-
+                        <h2 class="featurette-heading"><?=$page->product_info_title?></h2>
+                        <?=$page->product_info_description?>
                         <div class="featurette_button"><a class="btn btn-default btn-lg" href="#" role="button">Click here to register</a></div>
                     </div>
                 </div>
@@ -105,6 +104,9 @@
     </div>
 
 </div>
+
+
+
 
 
 

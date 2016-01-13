@@ -3,7 +3,7 @@
 
 
 <div class="container-fluid">
-    <div class="featurettes claims">
+    <div class="featurettes claims first">
             <div class="row featurette grey">
                 <div class="sub-container">
 
@@ -65,7 +65,7 @@
 
 
 <div class="container-fluid">
-    <div class="featurettes claims last">
+    <div class="featurettes claims">
         <div class="row featurette grey">
             <div class="sub-container">
                 <div class="col-xs-12 col-sm-6">
@@ -88,6 +88,56 @@
         </div>
     </div>
 
+</div>
+
+<div class="container-fluid">
+    <div class="featurettes claims last">
+        <div class="row featurette">
+            <div class="sub-container">
+                <div class="col-xs-12 col-sm-6">
+                        <div class="featurette_left_content">
+                            <h2 class="featurette-heading"><?=$page->examples_title?></h2>
+                            <?=$page->examples_description?>
+                        </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="featurettes claims last">
+        <div class="row featurette">
+            <div class="sub-container">
+                <div class="col-xs-12 col-sm-6">
+                    <div class="featurette_left_content">
+                        <h2 class="featurette-heading"><?=$page->claims_example_title_1?></h2>
+                        <?=$page->claims_example_description_1?>
+                        <div class="claims_example_grid"><img class="img-responsive" src="<?=$page->claims_example_grid_image_1->url?>" alt="<?=$page->claims_example_grid_image_1->description?>"></div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6">
+                    <div class="featurette_right_content">
+                        <h2 class="featurette-heading"><?=$page->claims_example_title_2?></h2>
+                        <?=$page->claims_example_description_2?>
+                        <div class="claims_example_grid"><img class="img-responsive" src="<?=$page->claims_example_grid_image_2->url?>" alt="<?=$page->claims_example_grid_image_2->description?>"></div>
+                    </div>
+
+
+                    <? /*
+                    <img class="img-responsive" src="<?=$page->claims_example_image_1->url?>" alt="<?=$page->claims_example_image_1->description?>">
+                    */ ?>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 

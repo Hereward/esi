@@ -183,11 +183,7 @@ div.callout_2, .featurette .callout_2 p {
 }
 
 
-/*
-.callout_1 div.sub-container, .callout_2 div.sub-container {
-    margin:95px 0px 95px 0px;
-}
-*/
+
 
 div.container-fluid.callout_1, div.container-fluid.callout_2 {
     padding:95px 0px 95px 0px;
@@ -329,51 +325,16 @@ form#fuLoginForm, form#fuRegisterForm  {
 
 
 
-/*
-
-div.carousel_static_caption {
-    display:none;
-    position: absolute;
-    top: 280px;
-    z-index: 100;
-
-    font-size: 38px;
-    font-weight:normal;
-    color:#a71680;
-    line-height:40px;
-    width:100%
-
-
-}
-
-.carousel_static_caption p {
-    max-width:400px;
-    background: rgb(54, 25, 25);
-    background: rgba(255, 255, 255, .8);
-    padding:20px;
-    border-radius: 10px;
-}
-
-*/
-
 
 
 
 /* MARKETING CONTENT
 -------------------------------------------------- */
 
-/* Center align the text within the three columns below the carousel */
 
 .marketing h2 {
     font-weight: normal;
 }
-
-/*
-.marketing .col-lg-4 p {
-    margin-right: 10px;
-    margin-left: 10px;
-}
-*/
 
 
 /* Claims */
@@ -397,6 +358,27 @@ div.carousel_static_caption {
 /* Featurettes
 ------------------------- */
 
+.featurettes.claims.last {
+    margin-top:50px;
+    margin-bottom:50px;
+}
+
+.featurettes.claims.last .featurette_right_content {
+    margin-top:0px;
+}
+
+.featurette_right_content {
+    /* max-width:400px; */
+}
+
+.featurette.even .featurette_right_content {
+    margin-top:0px;
+    margin-bottom:0px;
+}
+
+
+
+
 .featurettes.products {
     margin-top:100px;
 }
@@ -413,7 +395,7 @@ div.carousel_static_caption {
     margin-left:30px;
 }
 
-div.featurette .product_download img, div.featurette .claims_download img {
+div.featurette .product_download img, div.featurette .claims_download img, div.featurette .claims_example_grid img {
     float:none;
 }
 
@@ -465,6 +447,10 @@ div.featurette {
 }
 
 .products .featurette_centerer {
+    /* max-height: 500px; */
+}
+
+.products_header .featurette_centerer {
     /* max-height: 500px; */
 }
 
@@ -536,10 +522,24 @@ h2.featurette-heading-big {
         height: 100%;
     }
 
+    .products .featurette_centerer {
+        max-height: 500px;
+    }
+
 }
 
 
+@media (min-width: 1040px) {
+    .sub-container {
+        width:1020px;
+    }
+}
 
+@media (min-width: 1240px) {
+    .sub-container {
+        width:1200px;
+    }
+}
 
 
 @media (max-width: 1400px) {
@@ -561,11 +561,14 @@ h2.featurette-heading-big {
         padding-bottom: 40px;
     }
 
+    .claims.first .featurette_centerer{
+        max-height:400px;
+    }
 
 
 }
 
-@media (max-width: 1360px) {
+@media (max-width: 1000px) {
     .taskbar {
         position:static;
     }
@@ -581,16 +584,7 @@ h2.featurette-heading-big {
 
 
 
-@media (min-width: 1001px) and (max-width: 1201px)  {
 
-
-    .sub-container {
-        width:1020px;
-    }
-
-
-
-}
 
 @media (min-width: 769px) and (max-width: 1000px) {
 
@@ -608,7 +602,7 @@ h2.featurette-heading-big {
     }
 
     div.featurette img {
-        height:300px;
+        max-height:400px;
     }
 
     .sub-container {
@@ -776,6 +770,8 @@ h2.featurette-heading-big {
     .featurette_right_content {
         margin-top: 50px;
     }
+
+
 }
 
 
