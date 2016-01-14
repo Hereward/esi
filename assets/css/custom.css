@@ -421,6 +421,13 @@ div.featurette img {
     float:right;
 }
 
+
+div.featurette.member_area img {
+    float:none;
+}
+
+
+
 div.featurette.even, div.featurette.grey {
     background-color:#f8f8f8;
 }
@@ -506,6 +513,34 @@ h2.featurette-heading {
 h2.featurette-heading-big {
     font-size: 38px;
     line-height: 40px;
+}
+
+/* MEMEBER AREA */
+
+.member_area div.form_grid {
+    height:85px;
+}
+
+.member_area div.form_grid .form_grid_item {
+    position: relative;
+    top: 25px;
+    font-weight:bold;
+    color:#a71680;
+}
+
+.member_area .form_grid_container {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    border-top: 1px solid #f8f8f8;
+    /*border-bottom: 1px solid #f8f8f8;*/
+    clear:both;
+}
+
+.member_area h2 {
+    margin-top:50px;
 }
 
 
