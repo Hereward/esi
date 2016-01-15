@@ -50,6 +50,9 @@ $LastName->addHookAfter('processInput',
 
 $fu->register(array('username', 'email', 'password', $FirstName, $LastName));
 $fu->process("/member-area/login/");
+
+$navbar_class = "navbar_static";
+$taskbar_class = "taskbar_static";
 ?>
 
 

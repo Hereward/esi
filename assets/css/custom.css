@@ -543,6 +543,19 @@ h2.featurette-heading-big {
     margin-top:50px;
 }
 
+/* loginModal */
+
+#loginModal #continue_button {
+    /* display:none; */
+}
+
+.modal_message_area {
+    padding:20px;
+    text-align: center;
+    display:none;
+}
+
+
 
 
 /* RESPONSIVE CSS
