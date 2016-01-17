@@ -580,6 +580,13 @@ h2.featurette-heading-big {
     font-size:32px;
 }
 
+.modal-content .alert-success, .modal-content .btn-success, .modal-content .alert-danger {
+    background-color:transparent;
+    color:white;
+    border-color:white;
+    font-weight:bold;
+}
+
 
 
 /* RESPONSIVE CSS
