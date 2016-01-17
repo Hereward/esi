@@ -7,21 +7,41 @@ $content_path = "./login_tpl.php";
 
 
 
-$fu = $modules->get('FrontendUser');
-$fu->login(array('username', 'password'));
+//$fu = $modules->get('FrontendUser');
 
-$fieldUser = $fu->form->get('username');
-$fieldUser->addHookBefore('FrontendUser::auth', function($event) {
-    $email = wire('fu')->form->fhValue('username', 'email');
+if ($input->post->username) {
+    /*
+    $fu->login(array('username', 'password'));
+
+    $fieldUser = $fu->form->get('username');
+    wire()->addHookBefore('FrontendUser::auth', function($event) {
+        $email = wire('fu')->form->fhValue('username', 'email');
+        $loginUser = wire('users')->get("email={$email}");
+
+        if ($loginUser instanceof User && !$loginUser->isGuest()) {
+            $userObj = $event->arguments[0];
+            $userObj->name = $loginUser->name;
+        }
+    });
+
+    $fu->process("/member-area/");
+
+    */
+
+
+    $loginUser = '';
+    $email = $input->post->username;
     $loginUser = wire('users')->get("email={$email}");
-
-    if ($loginUser instanceof User && !$loginUser->isGuest()) {
-        $userObj = $event->arguments[0];
-        $userObj->name = $loginUser->name;
+    $result = $this->session->login($loginUser->name,$input->post->password);
+    if ($result) {
+        $session->redirect("/member-area/");
+        //return true;
+    } else {
+        $session->redirect("/");
     }
-});
 
-$fu->process("/member-area/");
+}
+
 
 $navbar_class = "navbar_static";
 $taskbar_class = "taskbar_static";

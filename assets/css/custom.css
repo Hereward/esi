@@ -127,7 +127,7 @@ footer strong {
 
 
 
-.callout_1, .carousel_static_caption, h2, .callout_2, .featurette_callout {
+.callout_1, .carousel_static_caption, h2, .callout_2, .featurette_callout, .modal-title {
     font-family: 'Slabo 27px', 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
 }
 
@@ -549,12 +549,36 @@ h2.featurette-heading-big {
     /* display:none; */
 }
 
+#loginModal .modal-content {
+    color:white;
+}
+
+#loginModal .modal-content a, #loginModal .modal-content a:link, #loginModal .modal-content a:visited {
+    color:white;
+    text-decoration:underline;
+}
+
 .modal_message_area {
     padding:20px;
     text-align: center;
     display:none;
 }
 
+.modal-header, .modal-footer {
+    border: 0px;
+}
+
+.modal-header {
+    padding-bottom: 0px;
+}
+
+.modal-footer {
+    padding-top: 0px;
+}
+
+.modal-title {
+    font-size:32px;
+}
 
 
 

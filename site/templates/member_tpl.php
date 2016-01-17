@@ -1,9 +1,9 @@
 <div id="loginModal" class="modal fade" tabindex="-1" role="dialog">
     <div class="modal-dialog">
-        <div class="modal-content">
+        <div style="background-size:cover; background-image:url(<?=$my_assets?>/images/general/pink_gradient.png)" class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Please Login to Continue</h4>
+                <h4 class="modal-title">Please Log in</h4>
             </div>
             <div class="modal-body">
 
@@ -17,7 +17,7 @@
                         <label for="password">Password</label>
                         <input id="password" class="form-control" name="password" type="password" placeholder="Password">
                     </div>
-                    <button id="fhSubmit1" class="btn btn-primary" name="fhSubmit1" value="Login" type="submit">Login</button> &nbsp; Don't have an account yet? <strong><a href="/member-area/register/">Register here</a></strong>
+                    <button id="fhSubmit1" class="btn btn-default" name="fhSubmit1" value="Login" type="submit">Login</button> &nbsp; Don't have an account yet? <strong><a href="/member-area/register/">Register here</a></strong>
                     <input type="hidden" name="<?=$session->CSRF->getTokenName(); ?>" value="<?=$session->CSRF->getTokenValue(); ?>" class="_post_token" >
                 </form>
 

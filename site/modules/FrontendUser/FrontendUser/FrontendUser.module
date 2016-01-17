@@ -115,12 +115,12 @@ class FrontendUser extends WireData implements Module {
                     $result = $this->auth($this->userObj);
                     $output = '';
                     if ($result === true) {
-                        //$this->session->redirect($redirect, false);     // User sucessfully registered
-                        $output = '{"status":"1"}';
+                        $this->session->redirect($redirect, false);     // User sucessfully registered
+                        //$output = '{"status":"1"}';
                     }
                     else {
-                        //$this->form->fhSubmitBtn->error($result);       // Save user failed?
-                        $output = '{"status":"0"}';
+                        $this->form->fhSubmitBtn->error($result);       // Save user failed?
+                        //$output = '{"status":"0"}';
                     }
                     return $output;
                     break;

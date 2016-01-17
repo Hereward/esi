@@ -1,10 +1,11 @@
 <?
 
-$fu = $modules->get('FrontendUser');
-
+//$fu = $modules->get('FrontendUser');
+$output = '';
 if ($input->post->username) {
     $useMain = false;
 
+    /*
     $fu->login(array('username', 'password'));
 
     $fieldUser = $fu->form->get('username');
@@ -19,13 +20,23 @@ if ($input->post->username) {
     });
     $response = $fu->process("/");
     echo $response;
+    */
 
-} else {
-   // $content_path = "./login_tpl.php";
-   // $navbar_class = "navbar_static";
-   // $taskbar_class = "taskbar_static";
-    echo '';
+    $loginUser = '';
+    $email = $input->post->username;
+    $loginUser = wire('users')->get("email={$email}");
+    $result = $this->session->login($loginUser->name,$input->post->password);
+    if ($result) {
+        //$session->redirect("/member-area/");
+        //return true;
+        $output = '{"status":"1"}';
+    } else {
+        //$session->redirect("/");
+        $output = '{"status":"0"}';
+    }
 }
+
+echo $output;
 ?>
 
 
