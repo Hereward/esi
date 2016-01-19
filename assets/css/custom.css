@@ -549,13 +549,55 @@ h2.featurette-heading-big {
     /* display:none; */
 }
 
+#loginModal #continue_button.btn-success:hover,
+#loginModal #continue_button.btn-success:focus,
+#loginModal #continue_button.btn-success:active,
+#loginModal #continue_button.btn-success.active {
+    background-color: transparent;
+    border-color: white;
+}
+
 #loginModal .modal-content {
     color:white;
+    min-height:300px;
+    padding:20px;
 }
+
+#loginModal .instructions {
+    margin-bottom:20px;
+
+}
+
+#loginModal .modal-footer {
+    text-align: left;
+    margin-top: 10px;
+
+}
+
+
+
+#loginModal #messages.alert-success {
+    font-size: 24px;
+    border:0px;
+}
+
+#fuRegisterForm {
+    display:none;
+}
+
+#footer_message.fm2 {
+    display:none;
+}
+
+
+
+
+
 
 #loginModal .modal-content a, #loginModal .modal-content a:link, #loginModal .modal-content a:visited {
     color:white;
-    text-decoration:underline;
+    text-decoration:none;
+    font-weight:bold;
 }
 
 .modal_message_area {

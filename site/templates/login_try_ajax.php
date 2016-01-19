@@ -3,7 +3,16 @@
 //$fu = $modules->get('FrontendUser');
 $output = '';
 if ($input->post->username) {
+
+
     $useMain = false;
+
+    //sleep(3);
+
+
+
+    //echo '{"status":"1"}';
+
 
     /*
     $fu->login(array('username', 'password'));
@@ -22,6 +31,7 @@ if ($input->post->username) {
     echo $response;
     */
 
+
     $loginUser = '';
     $email = $input->post->username;
     $loginUser = wire('users')->get("email={$email}");
@@ -34,15 +44,9 @@ if ($input->post->username) {
         //$session->redirect("/");
         $output = '{"status":"0"}';
     }
+
 }
 
 echo $output;
+
 ?>
-
-
-
-
-
-
-
-
