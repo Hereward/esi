@@ -6,15 +6,18 @@
 
 body {
     padding-bottom: 40px;
-    color: #5a5a5a;
+    /* color: #5a5a5a; */
+    color: #878787;
 
-    font-family: Helvetica, Arial, sans-serif;
+    /* font-family: Helvetica, Arial, sans-serif; */
     background:transparent;
 }
 
 .sub-container {
     max-width:1200px;
     margin:0px auto;
+    padding-left: 2px;
+    padding-right: 2px;
 }
 
 .container-fluid {
@@ -205,7 +208,6 @@ div.container-fluid.callout_1, div.container-fluid.callout_2 {
     background-color:#4c1156;
     color:#ea5153;
     font-size:13px;
-    /* font-family:helvetica, arial, sans-serif; */
     /* position: absolute; */
     z-index: 10;
     width: 100%;
@@ -223,14 +225,12 @@ div.container-fluid.callout_1, div.container-fluid.callout_2 {
 .taskbar a, .taskbar a:visited {
     color:#ea5153;
 
-    /* font-family:helvetica, arial, sans-serif; */
 }
 
 .taskbar a:hover {
     color:white;
     text-decoration:none;
 
-    /* font-family:helvetica, arial, sans-serif; */
 }
 
 
@@ -418,7 +418,7 @@ div.featurette_button {
 }
 
 div.featurette img {
-    float:right;
+    float:left;
 }
 
 
@@ -483,7 +483,6 @@ div.featurette {
 
 
 .featurette p, .featurette li {
-    /* font-family: helvetica, arial, sans-serif; */
     font-size: 17px;
     font-weight:normal;
     max-width:450px;
@@ -661,6 +660,19 @@ h2.featurette-heading-big {
         width:1200px;
     }
 }
+
+
+@media (min-width: 1200px)
+{
+
+    div [class*='col-'] {
+        padding-left:12px;
+        padding-right:12px;
+        /*max-width:75px;*/
+    }
+}
+
+
 
 
 @media (max-width: 1400px) {
