@@ -13,6 +13,12 @@ body {
     background:transparent;
 }
 
+a, a:link, a:visited {
+    color: #a71680;
+    text-decoration:none;
+    font-weight:bold;
+}
+
 .sub-container {
     max-width:1200px;
     margin:0px auto;
@@ -24,6 +30,15 @@ body {
     padding-right: 0px;
     padding-left: 0px;
 
+}
+
+div.dl_label {
+     font-weight:normal;
+     margin-top:20px;
+ }
+
+span.dl_label {
+    font-weight:normal;
 }
 
 /*
@@ -399,6 +414,24 @@ div.featurette .product_download img, div.featurette .claims_download img, div.f
     float:none;
 }
 
+div.claims_download {
+    font-size:16px;
+    padding-top:20px;
+    padding-bottom:30px;
+    border-top: 1px solid #dadada;
+    border-bottom: 1px solid #dadada;
+
+}
+
+div.claims_download div.dl_title {
+    margin-top: 5px;
+}
+
+
+.claims_download img.large_icon {
+    margin-right: 20px;
+}
+
 div.featurette .product_download div {
     border-bottom: 1px solid #f8f8f8;
 }
@@ -544,11 +577,6 @@ h2.featurette-heading-big {
 
 div.member_downloads {
     margin-bottom:20px;
-}
-
-div.member_downloads a, div.member_downloads a:link, div.member_downloads a:visited {
-    color: #a71680;
-    text-decoration:none;
 }
 
 

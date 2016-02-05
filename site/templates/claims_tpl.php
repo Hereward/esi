@@ -79,7 +79,13 @@
                                 <h2 class="featurette-heading"><?=$page->tile_title?>?</h2>
                                 <?=$page->tile_text?>
                                 <div class="claims_download first">
-                                    <div><a href="/"><img class="img-responsive" src="<?=$page->pdf_image->eq(0)->url?>" alt="<?=$page->pdf_image->eq(0)->description?>"></a></div>
+
+                                        <a href="/">
+                                            <img class="pull-left large_icon" src="<?=$my_assets?>/images/icons/pf_icon.png?>" alt="download">
+                                            <div class="dl_title">Claim Form</div>
+                                            <div class="dl_label"><img src="<?=$my_assets?>/images/icons/pdf_icon.png" alt="download"> Download (PDF, 2MB)</div>
+                                        </a>
+
                                 </div>
                             </div>
                         </div>

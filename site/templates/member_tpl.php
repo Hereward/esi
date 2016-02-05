@@ -130,7 +130,7 @@
                     </div>
 
                     <div class="col-sm-6">
-                        <div class="form_grid"><div class="form_grid_item"><a href="<?=$dl['page']->url?>"><img src="<?=$my_assets?>/images/icons/pdf_icon.png" alt="download"> Download (PDF, 2MB)</a></div></div>
+                        <div class="form_grid"><div class="form_grid_item"><a href="<?=$dl['page']->url?>"><span class="dl_label"><img src="<?=$my_assets?>/images/icons/pdf_icon.png" alt="download"> Download (PDF, 2MB)</span></a></div></div>
                     </div>
                 </div>
         </div>
