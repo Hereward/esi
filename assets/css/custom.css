@@ -352,22 +352,7 @@ form#fuLoginForm, form#fuRegisterForm  {
 }
 
 
-/* Claims */
 
-
-
-.claims_bg {
-    position: absolute;
-    top: 0px;
-    /* min-height: 569px; */
-    background-repeat: no-repeat !important;
-    /* background-position: right top !important; */
-    background-position: 50% 0% !important;
-    z-index: 0;
-    width: 100%;
-    background-size: 50% !important;
-    height:500px;
-}
 
 
 /* Featurettes
@@ -414,23 +399,11 @@ div.featurette .product_download img, div.featurette .claims_download img, div.f
     float:none;
 }
 
-div.claims_download {
-    font-size:16px;
-    padding-top:20px;
-    padding-bottom:30px;
-    border-top: 1px solid #dadada;
-    border-bottom: 1px solid #dadada;
-
-}
-
-div.claims_download div.dl_title {
-    margin-top: 5px;
-}
 
 
-.claims_download img.large_icon {
-    margin-right: 20px;
-}
+
+
+
 
 div.featurette .product_download div {
     border-bottom: 1px solid #f8f8f8;
@@ -482,9 +455,7 @@ div.featurette {
     height:630px;
 }
 
-.claims .featurette_centerer {
-    max-height: 500px;
-}
+
 
 .products .featurette_centerer {
     /* max-height: 500px; */
@@ -546,6 +517,83 @@ h2.featurette-heading-big {
     font-size: 38px;
     line-height: 40px;
 }
+
+
+
+
+/* Claims */
+
+.claims .featurette_centerer {
+    max-height: 500px;
+}
+
+.claims_example_grid  {
+    color: #a71680;
+    font-weight:bold;
+    max-width: 450px;
+
+}
+
+.claims_example_grid tr {
+    border-top:1px solid #a71680;
+}
+
+.claims_example_grid tr td:last-child {
+   text-align:right;
+}
+
+.claims_example_grid td {
+    padding-top:3px;
+    padding-bottom:3px;
+}
+
+.claims_example_grid p {
+    font-size:14px;
+    line-height: 15px;
+    margin-top:10px;
+}
+
+.claims_example_grid h3 {
+    font-size:17px;
+    font-weight:normal;
+}
+
+
+.claims_bg {
+    position: absolute;
+    top: 0px;
+    /* min-height: 569px; */
+    background-repeat: no-repeat !important;
+    /* background-position: right top !important; */
+    background-position: 50% 0% !important;
+    z-index: 0;
+    width: 100%;
+    background-size: 50% !important;
+    height:500px;
+}
+
+
+
+div.claims_download {
+    font-size:16px;
+    padding-top:20px;
+    padding-bottom:30px;
+    border-top: 1px solid #dadada;
+    border-bottom: 1px solid #dadada;
+
+}
+
+div.claims_download div.dl_title {
+    margin-top: 5px;
+}
+
+
+.claims_download img.large_icon {
+    margin-right: 20px;
+}
+
+
+
 
 /* MEMEBER AREA */
 

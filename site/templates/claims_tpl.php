@@ -123,7 +123,7 @@
                     <div class="featurette_left_content">
                         <h2 class="featurette-heading"><?=$page->claims_example_title_1?></h2>
                         <?=$page->claims_example_description_1?>
-                        <div class="claims_example_grid"><img class="img-responsive" src="<?=$page->claims_example_grid_image_1->url?>" alt="<?=$page->claims_example_grid_image_1->description?>"></div>
+                        <div class="claims_example_grid"><?=$page->claims_example_grid_1?></div>
                     </div>
                 </div>
 
@@ -131,7 +131,7 @@
                     <div class="featurette_right_content">
                         <h2 class="featurette-heading"><?=$page->claims_example_title_2?></h2>
                         <?=$page->claims_example_description_2?>
-                        <div class="claims_example_grid"><img class="img-responsive" src="<?=$page->claims_example_grid_image_2->url?>" alt="<?=$page->claims_example_grid_image_2->description?>"></div>
+                        <div class="claims_example_grid"><?=$page->claims_example_grid_2?></div>
                     </div>
 
 
