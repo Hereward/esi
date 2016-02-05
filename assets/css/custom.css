@@ -359,8 +359,8 @@ form#fuLoginForm, form#fuRegisterForm  {
 ------------------------- */
 
 .featurettes.claims.last {
-    margin-top:50px;
-    margin-bottom:50px;
+    margin-top:20px;
+    margin-bottom:0px;
 }
 
 .featurettes.claims.last .featurette_right_content {
