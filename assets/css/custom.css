@@ -516,31 +516,41 @@ h2.featurette-heading-big {
 
 /* MEMEBER AREA */
 
-.member_area div.form_grid {
+.member_downloads div.form_grid {
     height:85px;
 }
 
-.member_area div.form_grid .form_grid_item {
+.member_downloads div.form_grid .form_grid_item {
     position: relative;
     top: 25px;
     font-weight:bold;
     color:#a71680;
 }
 
-.member_area .form_grid_container {
+.member_downloads .form_grid_container {
     margin-bottom: 20px;
     margin-top: 20px;
     padding-top: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 0px;
 
     border-top: 1px solid #f8f8f8;
     /*border-bottom: 1px solid #f8f8f8;*/
     clear:both;
 }
 
-.member_area h2 {
+.member_downloads h2 {
     margin-top:50px;
 }
+
+div.member_downloads {
+    margin-bottom:20px;
+}
+
+div.member_downloads a, div.member_downloads a:link, div.member_downloads a:visited {
+    color: #a71680;
+    text-decoration:none;
+}
+
 
 /* loginModal */
 
