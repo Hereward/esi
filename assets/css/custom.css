@@ -529,7 +529,7 @@ h2.featurette-heading-big {
 
 .claims_example_grid  {
     color: #a71680;
-    font-weight:bold;
+    /* font-weight:bold; */
     max-width: 450px;
 
 }
@@ -540,6 +540,11 @@ h2.featurette-heading-big {
 
 .claims_example_grid tr td:last-child {
    text-align:right;
+   font-weight:bold;
+}
+
+.claims_example_grid tr td:first-child {
+    font-weight:normal;
 }
 
 .claims_example_grid td {
