@@ -116,11 +116,12 @@
         $downloads[] = array('icon'=>'pf_icon.png', 'page' => $page->proposal_form_pdf);
         $downloads[] = array('icon'=>'cf_icon.png', 'page' => $page->claim_form_pdf);
         $downloads[] = array('icon'=>'pw_icon.png', 'page' => $page->residential_policy_wording_pdf);
+        $i = 0;
         ?>
 
         <? foreach ($downloads as $dl) { ?>
         <div class="row">
-                <div class="form_grid_container clearfix">
+                <div class="form_grid_container clearfix<?=($i==0)?' first':'';?>">
                     <div class="col-sm-3">
                         <div class="form_grid"><img class="img-responsive" src="<?=$my_assets?>/images/icons/<?=$dl['icon']?>" alt="<?=$page->proposal_form_pdf->description?>"></div>
                     </div>
@@ -134,7 +135,8 @@
                     </div>
                 </div>
         </div>
-        <? } ?>
+
+        <? $i++; } ?>
 
 
     </div>
