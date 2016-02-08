@@ -80,8 +80,8 @@
                                 <?=$page->tile_text?>
                                 <div class="claims_download first">
 
-                                        <a href="/">
-                                            <img class="pull-left large_icon" src="<?=$my_assets?>/images/icons/pf_icon.png?>" alt="download">
+                                        <a href="<?=$claim_form->url?>">
+                                            <img class="pull-left large_icon" src="<?=$my_assets?>/images/icons/pf_icon.png" alt="download">
                                             <div class="dl_title">Claim Form</div>
                                             <div class="dl_label"><img src="<?=$my_assets?>/images/icons/pdf_icon.png" alt="download"> Download (PDF, 2MB)</div>
                                         </a>

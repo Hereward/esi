@@ -41,6 +41,9 @@ $footer_path =  "./footer.php";
 $navbar_class = ($logged_in)?'navbar_logged_in':'navbar_logged_out';
 $taskbar_class = ($logged_in)?'taskbar_normal':'taskbar_static';
 
+$member_area = $pages->get("/member-area/");
+$pdfs = $member_area->PDFs;
+
 $show_claims_bg = false;
 $bg_style = '';
 

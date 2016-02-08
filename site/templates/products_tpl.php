@@ -88,6 +88,28 @@
                         <div class="featurette_button"><a class="btn btn-default btn-lg" href="#" role="button">Click here to register</a></div>
                     </div>
                 </div>
+
+                <div class="col-xs-12 col-sm-6">
+
+                    <? $i = 0 ?>
+
+                    <? foreach ($downloads as $dl) { ?>
+
+                    <div class="products_download<?=($i==0)?' first':'';?>">
+
+                        <a href="<?=$dl['pdf']->url?>">
+                            <img class="pull-left large_icon" src="<?=$my_assets?>/images/icons/<?=$dl['icon']?>" alt="download">
+                            <div class="dl_title"><?=$dl['pdf']->description?></div>
+                            <div class="dl_label"><img src="<?=$my_assets?>/images/icons/pdf_icon.png" alt="download"> Download (PDF, 2MB)</div>
+                        </a>
+
+                    </div>
+
+                        <? $i++; } ?>
+                </div>
+
+                <? /*
+ $claim_form->url
                 <div class="col-xs-12 col-sm-6">
                     <div class="product_download first">
                         <div><a href="/"><img class="img-responsive" src="<?=$page->pdf_image->eq(0)->url?>" alt="<?=$page->pdf_image->eq(0)->description?>"></a></div>
@@ -99,6 +121,7 @@
                         <div><a href="/"><img class="img-responsive" src="<?=$page->pdf_image->eq(2)->url?>" alt="<?=$page->pdf_image->eq(2)->description?>"></a></div>
                     </div>
                 </div>
+                */ ?>
             </div>
         </div>
     </div>

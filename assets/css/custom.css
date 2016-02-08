@@ -388,6 +388,29 @@ form#fuLoginForm, form#fuRegisterForm  {
 }
 
 
+/* Products */
+
+div.products_download {
+    font-size:16px;
+    padding-top:20px;
+    padding-bottom:30px;
+    border-top: 1px solid #dadada;
+    border-bottom: 1px solid #dadada;
+
+}
+
+div.products_download.first {
+    margin-top: 70px;
+}
+
+div.products_download div.dl_title {
+    margin-top: 5px;
+}
+
+
+.products_download img.large_icon {
+    margin-right: 20px;
+}
 
 
 .featurettes.products {
@@ -406,7 +429,7 @@ form#fuLoginForm, form#fuRegisterForm  {
     margin-left:30px;
 }
 
-div.featurette .product_download img, div.featurette .claims_download img, div.featurette .claims_example_grid img {
+div.featurette .product_download img, div.featurette .claims_download img, div.featurette .products_download img, div.featurette .claims_example_grid img {
     float:none;
 }
 

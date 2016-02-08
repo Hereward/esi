@@ -33,7 +33,11 @@
                             <div class="featurette_centered <?=($tc % 2 == 0)?'featurette_right_content':'featurette_left_content';?>">
                                 <h2 class="featurette-heading"><?=$tile->tile_title?></h2>
                                 <?=$tile->tile_text?>
-                                <div class="featurette_button"><a class="btn btn-default btn-lg" href="#" role="button">Learn More</a></div>
+                                <? if ($tc == 2) { ?>
+                                    <div class="featurette_button"><a class="btn btn-default btn-lg" href="/products/" role="button">See our products</a> &nbsp; &nbsp; <a class="btn btn-default btn-lg" href="#" role="button">Request a quote</a></div>
+                                <? } else if ($tc == 3) { ?>
+                                    <div class="featurette_button"><a class="btn btn-default btn-lg" href="/claims/" role="button">Learn More</a></div>
+                                <? } ?>
                             </div>
                         </div>
                     </div>
