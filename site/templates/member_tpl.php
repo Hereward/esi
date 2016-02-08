@@ -107,15 +107,21 @@
     <div class="sub-container">
         <div class="row">
                 <div class="col-xs-12">
-                    <h2 class="featurette-heading featurette-heading-big">Forms</h2>
+                    <h2>Forms</h2>
                 </div>
         </div>
 
         <?
         $downloads = array();
-        $downloads[] = array('icon'=>'pf_icon.png', 'page' => $page->proposal_form_pdf);
-        $downloads[] = array('icon'=>'cf_icon.png', 'page' => $page->claim_form_pdf);
-        $downloads[] = array('icon'=>'pw_icon.png', 'page' => $page->residential_policy_wording_pdf);
+        $pdfs = $page->PDFs;
+        $claim_form = $pdfs->get("description*='Claim Form'");
+        $proposal_form = $pdfs->get("description*='Proposal Form'");
+
+
+        //$pf = $pdfs->find("images.description*=atrium");
+        $downloads[] = array('icon'=>'pf_icon.png', 'pdf' => $proposal_form);
+        $downloads[] = array('icon'=>'cf_icon.png', 'pdf' => $claim_form);
+
         $i = 0;
         ?>
 
@@ -123,20 +129,67 @@
         <div class="row">
                 <div class="form_grid_container clearfix<?=($i==0)?' first':'';?>">
                     <div class="col-sm-3">
-                        <div class="form_grid"><img class="img-responsive" src="<?=$my_assets?>/images/icons/<?=$dl['icon']?>" alt="<?=$page->proposal_form_pdf->description?>"></div>
+                        <div class="form_grid"><img class="img-responsive" src="<?=$my_assets?>/images/icons/<?=$dl['icon']?>" alt="<?=$dl['pdf']->description?>"></div>
                     </div>
 
                     <div class="col-sm-3">
-                        <div class="form_grid"><div class="form_grid_item"><?=$dl['page']->description?></div></div>
+                        <div class="form_grid"><div class="form_grid_item"><?=$dl['pdf']->description?></div></div>
                     </div>
 
                     <div class="col-sm-6">
-                        <div class="form_grid"><div class="form_grid_item"><a href="<?=$dl['page']->url?>"><span class="dl_label"><img src="<?=$my_assets?>/images/icons/pdf_icon.png" alt="download"> Download (PDF, 2MB)</span></a></div></div>
+                        <div class="form_grid"><div class="form_grid_item"><a href="<?=$dl['pdf']->url?>"><span class="dl_label"><img src="<?=$my_assets?>/images/icons/pdf_icon.png" alt="download"> Download (PDF, 2MB)</span></a></div></div>
                     </div>
                 </div>
         </div>
 
         <? $i++; } ?>
+
+
+    </div>
+</div>
+
+<div class="container-fluid member_downloads grey">
+    <div class="sub-container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h2>Policy wordings and guides</h2>
+            </div>
+        </div>
+
+        <?
+        $downloads = array();
+        $pdfs = $page->PDFs;
+
+        $rpw = $pdfs->get("description*='Residential Policy Wording'");
+        $cpw = $pdfs->get("description*='Commercial Policy Wording'");
+        $fsg = $pdfs->get("description*='Financial Services Guide'");
+
+        //$pf = $pdfs->find("images.description*=atrium");
+
+        $downloads[] = array('icon'=>'pw_icon.png', 'pdf' => $rpw);
+        $downloads[] = array('icon'=>'pw_icon.png', 'pdf' => $cpw);
+        $downloads[] = array('icon'=>'g_icon.png', 'pdf' => $fsg);
+        $i = 0;
+        ?>
+
+        <? foreach ($downloads as $dl) { ?>
+            <div class="row">
+                <div class="form_grid_container clearfix<?=($i==0)?' first':'';?>">
+                    <div class="col-sm-3">
+                        <div class="form_grid"><img class="img-responsive" src="<?=$my_assets?>/images/icons/<?=$dl['icon']?>" alt="<?=$dl['pdf']->description?>"></div>
+                    </div>
+
+                    <div class="col-sm-3">
+                        <div class="form_grid"><div class="form_grid_item"><?=$dl['pdf']->description?></div></div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form_grid"><div class="form_grid_item"><a href="<?=$dl['pdf']->url?>"><span class="dl_label"><img src="<?=$my_assets?>/images/icons/pdf_icon.png" alt="download"> Download (PDF, 2MB)</span></a></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <? $i++; } ?>
 
 
     </div>
