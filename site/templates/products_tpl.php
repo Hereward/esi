@@ -91,11 +91,11 @@
 
                 <div class="col-xs-12 col-sm-6">
 
-                    <? $i = 0 ?>
+                    <? $i = 1 ?>
 
                     <? foreach ($downloads as $dl) { ?>
 
-                    <div class="products_download<?=($i==0)?' first':'';?>">
+                    <div class="products_download<?=($i==1)?' first':'';?><?=($i==count($downloads))?' last':'';?>">
 
                         <a href="<?=$dl['pdf']->url?>">
                             <img class="pull-left large_icon" src="<?=$my_assets?>/images/icons/<?=$dl['icon']?>" alt="download">

@@ -395,12 +395,16 @@ div.products_download {
     padding-top:20px;
     padding-bottom:30px;
     border-top: 1px solid #dadada;
-    border-bottom: 1px solid #dadada;
+
 
 }
 
 div.products_download.first {
     margin-top: 70px;
+}
+
+div.products_download.last {
+    border-bottom: 1px solid #dadada;
 }
 
 div.products_download div.dl_title {
