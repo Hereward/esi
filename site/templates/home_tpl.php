@@ -34,7 +34,15 @@
                                 <h2 class="featurette-heading"><?=$tile->tile_title?></h2>
                                 <?=$tile->tile_text?>
                                 <? if ($tc == 2) { ?>
-                                    <div class="featurette_button"><a class="btn btn-default btn-lg" href="/products/" role="button">See our products</a> &nbsp; &nbsp; <a class="btn btn-default btn-lg" href="#" role="button">Request a quote</a></div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-6">
+                                        <div class="featurette_button"><a class="btn btn-default btn-lg" href="/products/" role="button">See our products</a></div>
+                                    </div>
+
+                                    <div class="col-xs-12 col-sm-6">
+                                        <div class="featurette_button"><a class="btn btn-default btn-lg" href="#" role="button">Request a quote</a></div>
+                                    </div>
+                                </div>
                                 <? } else if ($tc == 3) { ?>
                                     <div class="featurette_button"><a class="btn btn-default btn-lg" href="/claims/" role="button">Learn More</a></div>
                                 <? } ?>
