@@ -181,7 +181,8 @@ footer strong {
 
 
 div.callout_2, .featurette .callout_2 p {
-    background-color:#ededed;
+    /* background-color:#ededed; */
+    background-color:#f8f8f8;
 
     padding-top:30px;
     color: #a71680;
