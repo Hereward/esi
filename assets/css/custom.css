@@ -216,7 +216,8 @@ div.callout_2, .featurette .callout_2 p {
 
 
 div.container-fluid.callout_1, div.container-fluid.callout_2 {
-    padding:95px 0px 95px 0px;
+    padding-top:95px;
+    padding-bottom:95px;
 }
 
 .callout_2 .row.first{
