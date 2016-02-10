@@ -892,6 +892,8 @@ div.member_downloads {
 
     div.featurette img {
         max-height:400px;
+        margin-top: 48px;
+        margin-bottom: 48px;
     }
 
     .sub-container {
